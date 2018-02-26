@@ -8,6 +8,7 @@ import Home from './components/Home/Home';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import Shop from './components/Shop/Shop';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
+import ReturnPolicy from './components/ReturnPolicy/ReturnPolicy';
 
 export default (
     <Switch>
@@ -18,6 +19,7 @@ export default (
         <Route path="/checkout" component={Checkout} />
         <Route path="/contact" component={Contact} /> 
         <Route path="/about" component={About} />
+        <Route path="/returnpolicy" component={ReturnPolicy} />
     </Switch>
 );
 

@@ -7,7 +7,6 @@ class Home extends Component {
     render() {
         return (
            <img src={require("./home-image.png")} />
-
         )
     }
 }
