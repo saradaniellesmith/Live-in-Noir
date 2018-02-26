@@ -12,13 +12,13 @@ class NavBar extends Component {
         <img />      
         <div className = "nav-links">
             <Link to="/"> 
-                <p> HOME </p>
+                <span> HOME </span>
             </Link>
             <Link to="/shop">
-                <p> SHOP </p>
+                <span> SHOP </span>
             </Link>
             <Link to="/about">
-                <p> ABOUT US </p>
+                <span> ABOUT </span>
             </Link>
         </div>
     </div>

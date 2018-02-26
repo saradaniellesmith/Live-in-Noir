@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
+import "./Home.css";
+
 class Home extends Component {
     render() {
-        return <h2> Home Page </h2>;
+        return (
+           <img src={require("./home-image.png")} />
+
+        )
     }
 }
 
