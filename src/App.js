@@ -3,29 +3,26 @@ import axios from "axios";
 
 import logo from "./logo.svg";
 import "./App.css";
+import routes from "./routes";
+import NavBar from "./components/NavBar/NavBar";
+import Footer from "./components/Footer/Footer";
 
 class App extends Component {
-  componentDidMount() {
-    axios
-      .get("/api/test")
-      .then(response => {
-        console.log(response);
-      })
-      .catch(console.log);
-  }
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
+        <header> 
+          <NavBar /> 
         </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <div className="Routes"> 
+            { routes } 
+          </div>
+        <footer> 
+          <Footer /> 
+        </footer>
       </div>
     );
   }
-}
+} 
 
 export default App;

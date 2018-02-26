@@ -6,9 +6,16 @@ const cors = require("cors");
 const passport = require("passport");
 const massive = require("massive");
 
+
 const port = 3001;
 
 const app = express();
+
+// DATABASE CONNECTION //
+massive(process.env.CONNECTION_STRING)
+  .then(db => {
+    app.set('db', db);
+  }).catch(console.log);
 
 // MIDDLEWARES // 
 app.use(json());
@@ -24,9 +31,17 @@ app.use(
   })
 );
 
+// DATABASE REQUEST // 
 app.get("/api/test", (req, res) => {
-  res.status(200).json({ message: "Successfully Connected" });
-});
+    req.app.get("db") // referencing database 
+      .getUser()
+      .then(response => {
+        res.status(200).json(response);
+      })
+      .catch(err => {
+        res.status(500).json(err);
+      });
+  });
 
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`);
