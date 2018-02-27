@@ -1,49 +1,47 @@
-import axios from 'axios';
+import axios from "axios";
 
-// CONSTANTS //
+// CONSTANTS
 
 const GET_USER = "GET_USER";
 
-// ACTION CREATORS //
+// ACTION CREATORS
 
 export function getUser() {
-    return {
-        type: GET_USER,
-        payload: axios 
-            .get("/api/test")
-            .then(response => {
-                return response.data
-            })
-            .catch(console.log)
-    };
+  return {
+    type: GET_USER,
+    payload: axios
+      .request({ url: "/api/me" })
+      .then(response => response.data)
+      .catch(err => err.message)
+  };
 }
 
-// INITIAL STATE //
+// INITIAL STATE
 
 const initialState = {
-    user: {},
-    isLoading: false,
-    didErr: false 
+  user: {},
+  isLoading: false,
+  didErr: false,
+  errMessage: null
 };
 
 export default function reducer(state = initialState, action) {
-    switch(action.type) {
-        case `${GET_USER}_PENDING`:
-            return Object.assign({}, state, { 
-                isLoading: true});
+  switch (action.type) {
+    case `${GET_USER}_PENDING`:
+      return Object.assign({}, state, { isLoading: true });
 
-        case `${GET_USER}_FULFILLED`:
-            return Object.assign({}, state, {
-                isLoading: false,
-                users: action.payload
-            });
+    case `${GET_USER}_FULFILLED`:
+      return Object.assign({}, state, {
+        isLoading: false,
+        user: action.payload
+      });
 
-        case `${GET_USER}_REJECTED`:
-            return Object.assign({}, state, { 
-                isLoading: false, 
-                didErr: true});
-
-        default:
-            return state;
-    }
+    case `${GET_USER}_REJECTED`:
+      return Object.assign({}, state, {
+        isLoading: false,
+        didErr: true
+      });
+    default:
+      return state;
+  }
 }

@@ -1,0 +1,70 @@
+.nav {
+    text-align: right;
+}
+
+.menu .logo {
+    color: black;
+    font-size: 28px;
+    display: flex;
+    justify-content: flex-start;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.menu a {
+    clear: right;
+    text-decoration: none;
+    color: black;
+    margin: 0 18px;
+    font-size: 14.4px;
+    letter-spacing: 1px;
+}
+
+.menu a:hover {
+    color: grey;
+}
+
+label {
+    margin: 0 40px 0 0;
+    font-size: 26px;
+    line-height: 70px;
+    display: none;
+    width: 26px;
+    float: right;
+}
+
+#toggle {
+    display: none;
+}
+
+
+@media only screen and (max-width: 600px) {
+    label {
+        display: block;
+        cursor: pointer;
+        color: black;
+    }
+
+    .menu {
+        text-align: center;
+        width: 100%;
+        display: none;
+        background: white;
+    }
+    .menu a {
+        display: block;
+        background: white;
+        margin: 0;
+        text-align: left;
+        padding-left: 15px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+
+    }
+    #toggle:checked + .menu {
+        display: block;
+        background: white;
+    }
+}
