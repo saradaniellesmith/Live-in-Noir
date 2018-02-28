@@ -12,16 +12,17 @@
     margin-left: 15px;
 }
 
-.menu a {
+.menu p {
     clear: right;
     text-decoration: none;
+    display: inline;
     color: black;
     margin: 0 18px;
     font-size: 14.4px;
     letter-spacing: 1px;
 }
 
-.menu a:hover {
+.menu p:hover {
     color: grey;
 }
 
@@ -39,7 +40,7 @@ label {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 650px) {
     label {
         display: block;
         cursor: pointer;
@@ -52,7 +53,7 @@ label {
         display: none;
         background: white;
     }
-    .menu a {
+    .menu p {
         display: block;
         background: white;
         margin: 0;

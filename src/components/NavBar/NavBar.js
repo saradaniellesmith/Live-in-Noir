@@ -11,14 +11,14 @@ class NavBar extends Component {
         return (
 
     <div className ="nav">  
-        <label for="toggle"> &#9776; </label>
+        <label htmlFor="toggle"> &#9776; </label>
         <input type="checkbox" id="toggle"/>
         <div className ="menu">
             <div className="logo"> LIVE IN NOIR </div>
-            <a href=""> <Link to="/"> HOME </Link> </a>
-            <a href=""> <Link to="/shop"> SHOP </Link> </a>
-            <a href=""> <Link to="/about"> ABOUT </Link> </a>
-            <a href=""> {process.env.REACT_APP_LOGIN} LOGIN </a>
+            <p> <Link to="/"> HOME </Link> </p>
+            <p> <Link to="/shop"> SHOP </Link> </p>
+            <p> <Link to="/about"> ABOUT </Link> </p>
+            <p> LOGIN </p>
         </div>
     </div>
 

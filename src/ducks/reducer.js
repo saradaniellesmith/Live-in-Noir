@@ -1,29 +1,15 @@
 import axios from "axios";
 
-// CONSTANTS
-
-const GET_USER = "GET_USER";
-
-// ACTION CREATORS
-
-export function getUser() {
-  return {
-    type: GET_USER,
-    payload: axios
-      .request({ url: "/api/me" })
-      .then(response => response.data)
-      .catch(err => err.message)
-  };
-}
-
 // INITIAL STATE
-
 const initialState = {
   user: {},
   isLoading: false,
   didErr: false,
-  errMessage: null
+  errMessage: null,
 };
+
+// CONSTANTS
+const GET_USER = "GET_USER";
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
@@ -44,4 +30,15 @@ export default function reducer(state = initialState, action) {
     default:
       return state;
   }
+}
+
+// ACTION CREATORS
+export function getUser() {
+  return {
+    type: GET_USER,
+    payload: axios
+      .request({ url: "/api/me" })
+      .then(response => response.data)
+      .catch(err => err.message)
+  };
 }

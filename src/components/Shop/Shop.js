@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import Card from './Card/Card';
 
 class Shop extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
 
         this.state = {
-            
+            productList: []
         }
     }
+
+    componentDidMount() {
+        axios.get('/products').then(response => {
+            this.setState({ productList: response.data });
+        })
+    }
+
     render () {
-        return (
-            <h2> Shop page </h2>
-        )
+       var products = this.state.productList.map(function(product, index) {
+           return(
+              <Card product={product} key={index} />
+           )
+       })
+
+       return(
+
+        <div> { products } </div>
+       )
     }
 }
 

@@ -7,6 +7,8 @@ const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const massive = require("massive");
 
+const controller = require('./controllers/controller');
+
 const port = 3001;
 
 const app = express();
@@ -27,78 +29,24 @@ app.use(
     secret: SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: {
-      maxAge: 100000
-    }
   })
 );
 
-// AUTH0 //
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// passport.use(
-//   new Auth0Strategy(
-//     {
-//       domain: DOMAIN,
-//       clientSecret: CLIENT_SECRET,
-//       clientID: CLIENT_ID,
-//       callbackURL: "/auth"
-//     },
-//     (accessToken, refreshToken, extraParams, profile, done) => {
-//       app
-//         .get("db")
-//         .getUserByAuthId(profile.id)
-//         .then(response => {
-//           if (!response[0]) {
-//             app
-//               .get("db")
-//               .createUserByAuthId([profile.id, profile.displayName])
-//               .then(created => done(null, created[0]));
-//           } else {
-//             return done(null, response[0]);
-//           }
-//         });
-//     }
-//   )
-// );
-
-// passport.serializeUser((user, done) => done(null, user));
-// passport.deserializeUser((user, done) => dont(null, user));
-
-// app.get(
-//   "/auth",
-//   passport.authenticate("auth0", {
-//     successRedirect: "http://localhost:3001/#/shop"
-//     failureRedirect: "http://locahost:3001/#/"
-//   }),
-//   (req, res) => {
-//     res.redirect(`http://localhost:3000/#/user/${req.user.name}`);
-//   }
-// );
-
-// app.get("/api/me", (req, res) => { // to do: save in redux store 
-//   if (req.user) res.status(200).json(req.user);
-//   else res.status(500).json({ message: "Please Login" });
-// });
-
-// app.get("/logout", (req, res) => {
-//   req.session.destroy(() => {
-//     res.redirect("http://localhost:3000/#/shop");
-//   });
-// });
 
 // DATABASE REQUEST // 
-app.get("/api/test", (req, res) => {
-    req.app.get("db") // referencing database 
-      .getUser()
-      .then(response => {
-        res.status(200).json(response);
-      })
-      .catch(err => {
-        res.status(500).json(err);
-      });
-  });
+// app.get('products', (req, res) => {
+//     req.app.get("db") // referencing database 
+//       .getProducts()
+//       .then(response => {
+//         res.status(200).json(response);
+//       })
+//       .catch(err => {
+//         res.status(500).json(err);
+//       });
+//   });
+
+app.get('/products', controller.getProducts);
+
 
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`);
