@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import Image from 'react-image-resizer';
 
-class Card extends Component {
+class DetailsCard extends Component {
     constructor(props) {
         super(props);
     }
 
 render() {
     return( 
-        <div className="prod-container">
+        <div className="details-container">
             <Image src={this.props.product.image} height={500} width={500}/>
             <h1> {this.props.product.product_description} </h1>
             <h2> {this.props.product.brand_name} </h2>
@@ -18,4 +18,4 @@ render() {
 }
 }
 
-export default Card;
+export default DetailsCard;

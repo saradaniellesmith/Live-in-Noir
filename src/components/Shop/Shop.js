@@ -21,12 +21,13 @@ class Shop extends Component {
     render () {
        var products = this.state.productList.map(function(product, index) {
            return(
+              <Link to={`/productdetails/${product.product_id}`} key={index}>
               <Card product={product} key={index} />
+              </Link>
            )
        })
 
        return(
-
         <div> { products } </div>
        )
     }

@@ -16,7 +16,7 @@ class NavBar extends Component {
         <div className ="menu">
             <div className="logo"> LIVE IN NOIR </div>
             <p> <Link to="/"> HOME </Link> </p>
-            <p> <Link to="/shop"> SHOP </Link> </p>
+            <p> <Link to="/shop/:shop"> SHOP </Link> </p>
             <p> <Link to="/about"> ABOUT </Link> </p>
             <p> LOGIN </p>
         </div>

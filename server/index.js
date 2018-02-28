@@ -46,6 +46,7 @@ app.use(
 //   });
 
 app.get('/products', controller.getProducts);
+app.get('productdetails/:_product_id', controller.getProductsById)
 
 
 app.listen(port, () => {
