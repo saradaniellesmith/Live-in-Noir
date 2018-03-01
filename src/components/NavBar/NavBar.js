@@ -17,7 +17,8 @@ class NavBar extends Component {
             <div className="logo"> LIVE IN NOIR </div>
             <p> <Link to="/"> HOME </Link> </p>
             <p> <Link to="/shop/:shop"> SHOP </Link> </p>
-            <p> <Link to="/about"> ABOUT </Link> </p>
+            {/* <p> <Link to="/about"> ABOUT </Link> </p> */}
+            <p> <Link to="/shoppingcart"> CART </Link> </p>
             <p> LOGIN </p>
         </div>
     </div>

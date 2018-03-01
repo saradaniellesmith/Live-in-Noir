@@ -6,6 +6,7 @@ const cors = require("cors");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const massive = require("massive");
+const Middleware = require('./middleware/middleware');
 
 const controller = require('./controllers/controller');
 
@@ -31,23 +32,11 @@ app.use(
     saveUninitialized: false,
   })
 );
-
-
-// DATABASE REQUEST // 
-// app.get('products', (req, res) => {
-//     req.app.get("db") // referencing database 
-//       .getProducts()
-//       .then(response => {
-//         res.status(200).json(response);
-//       })
-//       .catch(err => {
-//         res.status(500).json(err);
-//       });
-//   });
+app.use(Middleware);
 
 app.get('/products', controller.getProducts);
-app.get('productdetails/:_product_id', controller.getProductsById)
-
+app.get('/productdetails/:product_id', controller.getProductById);
+app.post('/shoppingcart', controller.addToCart);
 
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`);
