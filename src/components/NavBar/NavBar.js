@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'; // connects routes with redux to ensure you don't miss state updates
+import { withRouter } from 'react-router-dom'; 
 
 import './NavBar.css';
 
@@ -19,7 +19,7 @@ class NavBar extends Component {
             <p> <Link to="/shop/:shop"> SHOP </Link> </p>
             {/* <p> <Link to="/about"> ABOUT </Link> </p> */}
             <p> <Link to="/shoppingcart"> CART </Link> </p>
-            <p> LOGIN </p>
+            <p> <a href={process.env.REACT_APP_LOGIN}> LOGIN </a> </p>
         </div>
     </div>
 

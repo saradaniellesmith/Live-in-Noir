@@ -1,4 +1,5 @@
 require("dotenv").config();
+const passport = require('passport');
 
 module.exports = {
   getProducts: (req, res, next) => {
@@ -28,5 +29,13 @@ module.exports = {
 
   deleteFromCart: (req, res, next) => {
     
+  },
+
+  login: (res, req, next) => {
+    console.log("hit");
+    passport.authenticate("auth0", {
+      successRedirect: "http://localhost:3000/#/shop",
+      failureRedirect: "http://localhost:3000/#/"
+    })
   }
 };

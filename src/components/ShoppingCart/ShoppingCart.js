@@ -20,28 +20,43 @@ class ShoppingCart extends Component {
       .catch(console.log());
   }
 
-  deleteFromCart
-
+  deleteFromCart() {
+    axios
+      .delete("/delete", )
+      .then(response => response.data)
+      .catch(console.log);
+  }
 
   render() {
+    let total = 0;
     let cartList = [];
     var cartItems = this.state.cart;
     console.log(this.state.cart);
     if (!(this.state.cart.length > 0)) {
-      cartList = <div> patience my friend </div>;
+      cartList = <div> </div>;
     } else {
       cartList = cartItems.map((product, index) => {
         return (
           <div className="cart-items" key={index}>
             <h1> {product.product_description} </h1>
             <h2> {product.price} </h2>
-            {/* <button onClick={() => }>  </button> */}
+            {/* <button> Remove </button> */}
           </div>
         );
       });
-    }
 
-    return <div> {cartList} </div>;
+      total = cartItems.reduce((a, b) => {
+        return (a += b.price);
+      }, 0);
+
+      console.log(total);
+    }
+    return (
+      <div> 
+       <div> {cartList} </div>
+        <p> Total: {total} </p>
+      </div>
+    );
   }
 }
 

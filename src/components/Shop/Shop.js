@@ -13,7 +13,7 @@ class Shop extends Component {
   }
 
   componentDidMount() {
-    axios.get("/products").then(response => {
+    axios.get('/products').then(response => {
       this.setState({ productList: response.data });
     });
   }
