@@ -1,9 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
 
-.footer {
-    display: flex;
-}
 
 .footer-left {
     width: 350px;
@@ -14,8 +11,6 @@
 }
 .footer-social-icons {
     width: 350px;
-    display: flex;
-    flex-direction: column;
     margin: 0 auto;
 }
 

@@ -3,11 +3,19 @@
     justify-content: center;
     flex-direction: column;
     margin: 0 auto;
-    width: 40%;
+    width: 55%;
     height: auto;
-    font-family: 'Alegreya Sans SC', sans-serif;
-
+    margin-top: 20px;
 }
 
+.description {
+    font-size: 18px;
+}
 
+.brand {
+    font-size: 15px;
+}
 
+.price {
+    font-size: 16px;
+}

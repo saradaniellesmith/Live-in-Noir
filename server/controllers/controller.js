@@ -28,7 +28,12 @@ module.exports = {
   },
 
   deleteFromCart: (req, res, next) => {
-    
+    const { product_id } = req.params;
+    const { cart } = req.session.user;
+
+    const i = cart.findIndex((product) => product.product_id == product_id);
+    cart.splice(i, 1);
+    res.status(200).json(req.session.user);
   },
 
   login: (res, req, next) => {

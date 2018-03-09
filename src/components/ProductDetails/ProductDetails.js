@@ -38,13 +38,15 @@ class ProductDetails extends Component {
     var product = this.state.product.map((product, index) => {
       console.log(this);
       return (
-        <div className="prod-details" key={index}>
+        <div className="product-details-page" key={index}>
           <Image src={product.image} height={500} width={500} />
-          <h1> {product.brand_name} </h1>
-          <h2> {product.product_description} </h2>
-          <h3> {product.price}.00 </h3>
-          <p> {product.editor_note} </p>
-          <button onClick={() => this.addToCart(product)}> Add to Cart </button>
+          <div className="product-info">
+            <h1> {product.brand_name} </h1>
+            <h2> {product.product_description} </h2>
+            <h3> {product.price}.00 </h3>
+            <p> {product.editor_note} </p>
+            <button onClick={() => this.addToCart(product)}> Add to Cart </button>
+          </div>
         </div>
       );
     });

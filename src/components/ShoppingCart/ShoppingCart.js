@@ -20,11 +20,15 @@ class ShoppingCart extends Component {
       .catch(console.log());
   }
 
-  deleteFromCart() {
+  deleteFromCart(product) {
+    console.log("delete");
     axios
-      .delete("/delete", )
-      .then(response => response.data)
-      .catch(console.log);
+      .delete(`/delete/${product}`)
+      .then(response => {
+        this.setState({
+          cart: response.data.cart
+        })
+      })
   }
 
   render() {
@@ -38,9 +42,10 @@ class ShoppingCart extends Component {
       cartList = cartItems.map((product, index) => {
         return (
           <div className="cart-items" key={index}>
+            <img src={product.image} style={{ width: '10vh'}}/>
             <h1> {product.product_description} </h1>
-            <h2> {product.price} </h2>
-            {/* <button> Remove </button> */}
+            <h2> {product.price}.00 </h2>
+            <button onClick={() => this.deleteFromCart(product.product_id)}> Remove </button>
           </div>
         );
       });

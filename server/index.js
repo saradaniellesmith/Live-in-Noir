@@ -6,6 +6,7 @@ const cors = require("cors");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const massive = require("massive");
+
 const Middleware = require("./middleware/middleware");
 const controller = require("./controllers/controller");
 
@@ -21,6 +22,7 @@ const {
   SESSION_SECRET
 } = process.env;
 
+// SESSION //
 app.use(
   session({
     secret: SESSION_SECRET,
@@ -28,6 +30,7 @@ app.use(
     saveUninitialized: false
   })
 );
+
 // DATABASE CONNECTION //
 massive(CONNECTION_STRING)
   .then(db => {
@@ -41,6 +44,7 @@ app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 
+//AUTH0//
 passport.use(
   new Auth0Strategy(
     {
@@ -51,8 +55,6 @@ passport.use(
       callbackURL: "/auth"
     },
     (accessToken, refreshToken, extraParams, profile, done) => {
-      console.log("Hit inside strat");
-      console.log(profile);
       app
         .get("db")
         .getUserByAuthId(profile.id)
@@ -67,12 +69,10 @@ passport.use(
           }
         });
     },
-    console.log("hit here")
   )
 );
 
 passport.serializeUser((user, done) => {
-  console.log("Serialize user");
   return done(null, user);
 });
 passport.deserializeUser((user, done) => {
@@ -81,6 +81,7 @@ passport.deserializeUser((user, done) => {
 
 app.use(Middleware);
 
+// END POINTS //
 app.get(
   "/auth",
   passport.authenticate("auth0", {
@@ -92,7 +93,7 @@ app.get("/products", controller.getProducts);
 app.get("/productdetails/:product_id", controller.getProductById);
 app.post("/shoppingcart", controller.addToCart);
 app.get("/shoppingcart", controller.cart);
-app.delete("/delete", controller.deleteFromCart);
+app.delete("/delete/:id", controller.deleteFromCart);
 
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`);

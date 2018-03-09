@@ -1,0 +1,9 @@
+.product-details-page {
+    display: flex;
+
+}
+
+.product-info {
+    display: flex;
+    flex-direction: row;
+}
