@@ -9,11 +9,11 @@ class Card extends Component {
 render() {
     return(
         <div className="prod-container">
-            <img src={this.props.product.image} />
+        <img className="prod-image" src={this.props.product.image} />
             <div className="product-details" >
                 <h1 className="description"> {this.props.product.product_description} </h1>
-                <h2 className="brand"> {this.props.product.brand_name} </h2>
-                <h3 className="price"> {this.props.product.price}.00 </h3> 
+                <p className="brand"> {this.props.product.brand_name} </p>
+                <p className="price"> {this.props.product.price}.00 </p> 
             </div>
         </div> 
     )
