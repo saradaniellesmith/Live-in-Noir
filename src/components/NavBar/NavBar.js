@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'; 
 
 import './bag.png';
+import './LIVEINNOIR.png';
+import './LIVEIN.png';
 import './NavBar.css';
 
 class NavBar extends Component {
@@ -15,7 +17,7 @@ class NavBar extends Component {
         <label htmlFor="toggle"> &#9776; </label>
         <input type="checkbox" id="toggle"/>
         <div className ="menu">
-            <div className="logo"> <Link to="/" style={{ textDecoration: 'none', color: 'black' }}> LIVE IN NOIR </Link> </div>
+            <div className="logo">  <Link to="/" style={{ textDecoration: 'none', color: 'black' }}> LIVE IN NOIR </Link> </div>
             <div className="routes">
                 <p> <Link to="/" style={{ textDecoration: 'none', color: 'black' }}> HOME </Link> </p>
                 <p> <Link to="/shop/:shop" style={{ textDecoration: 'none', color: 'black' }}> SHOP </Link> </p>

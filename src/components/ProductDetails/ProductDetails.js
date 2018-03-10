@@ -3,9 +3,11 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
-import Image from "react-image-resizer";
+// import Image from "react-image-resizer";
 
-class ProductDetails extends Component {
+import './ProductDetails.css';
+
+class ProductDetails extends  Component {
   constructor(props) {
     super(props);
 
@@ -39,13 +41,17 @@ class ProductDetails extends Component {
       console.log(this);
       return (
         <div className="product-details-page" key={index}>
-          <Image src={product.image} height={500} width={500} />
+        <div className="details-images">
+          <img className="image-details" src={product.image}  />
+          <img className="image-details" src={product.image2} />
+          <img className="image-details" src={product.image3} />
+        </div>
           <div className="product-info">
             <h1> {product.brand_name} </h1>
             <h2> {product.product_description} </h2>
             <h3> {product.price}.00 </h3>
-            <p> {product.editor_note} </p>
-            <button onClick={() => this.addToCart(product)}> Add to Cart </button>
+            <p className="editors-note"> {product.editor_note} </p>
+            <button className="add" onClick={() => this.addToCart(product)}> ADD ME, YOU KNOW YOU WANT TO </button>
           </div>
         </div>
       );

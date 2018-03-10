@@ -6,9 +6,6 @@ import './Footer.css';
 var linkStyle = {
     textDecoration: 'none',
     color: '#a3a5a7',
-    '& Link:hover' : {
-        color: '#4c4c4b'
-    }
 }
 
 class Footer extends Component {

@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 
+import './ShoppingCart.css'
+
 class ShoppingCart extends Component {
   constructor(props) {
     super(props);
@@ -42,10 +44,12 @@ class ShoppingCart extends Component {
       cartList = cartItems.map((product, index) => {
         return (
           <div className="cart-items" key={index}>
-            <img src={product.image} style={{ width: '10vh'}}/>
-            <h1> {product.product_description} </h1>
-            <h2> {product.price}.00 </h2>
+          <div className="cart-description">
+            <img className="cart-photo" src={product.image}/>
+            <h1 className="cart-name"> {product.product_description} </h1>
+            <h2 className="cart-price"> {product.price}.00 </h2>
             <button onClick={() => this.deleteFromCart(product.product_id)}> Remove </button>
+          </div>
           </div>
         );
       });
