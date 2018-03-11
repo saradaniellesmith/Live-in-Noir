@@ -33,12 +33,14 @@
     font-size: 16px;
     background: #2c2c2c;
     color: white;
+    transition: .5s;
 }
 
 .add:hover {
     border: 1px solid black;
     color: black;
     background: none;
+    transition: .5s;
 }
 
 .editors-note {
