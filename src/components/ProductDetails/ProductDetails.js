@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
@@ -50,6 +50,7 @@ class ProductDetails extends  Component {
             <h1> {product.brand_name} </h1>
             <h2> {product.product_description} </h2>
             <h3> {product.price}.00 </h3>
+            {/* <p> Description </p> */}
             <p className="editors-note"> {product.editor_note} </p>
             <button className="add" onClick={() => this.addToCart(product)}> ADD ME, YOU KNOW YOU WANT TO </button>
           </div>

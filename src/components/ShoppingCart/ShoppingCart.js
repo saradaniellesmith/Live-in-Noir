@@ -61,9 +61,16 @@ class ShoppingCart extends Component {
       console.log(total);
     }
     return (
-      <div> 
-       <div> {cartList} </div>
-        <p> Total: {total} </p>
+      <div>
+        <div className="cart-list"> 
+          <div> {cartList} </div>
+          <p> Total: ${total}.00 </p>
+        </div>
+        
+        
+
+
+
       </div>
     );
   }

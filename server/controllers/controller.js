@@ -42,5 +42,38 @@ module.exports = {
       successRedirect: "http://localhost:3000/#/shop",
       failureRedirect: "http://localhost:3000/#/"
     })
+  },
+
+  getProductsByPrice: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getProductsByPrice()
+    .then(products => res.status(200).json(products))
+    .catch( () => res.status(500).json());
+  },
+
+  getProductsByPriceDesc: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getProductsByPriceDesc()
+    .then(products => res.status(200).json(products))
+    .catch( () => res.status(500).json());
+  },
+
+  getProductsByBrand: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getProductsByBrand()
+    .then(products => res.status(200).json(products))
+    .catch( () => res.status(500).json());
+  },
+
+  getProductsByBrandDesc: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getProductsByBrandDesc()
+    .then(products => res.status(200).json(products))
+    .catch( () => res.status(500).json());
   }
+
 };

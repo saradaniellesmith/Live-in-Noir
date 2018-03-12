@@ -94,7 +94,11 @@ app.get("/productdetails/:product_id", controller.getProductById);
 app.post("/shoppingcart", controller.addToCart);
 app.get("/shoppingcart", controller.cart);
 app.delete("/delete/:id", controller.deleteFromCart);
-
+app.get("/products/price", controller.getProductsByPrice);
+app.get("/products/price_desc", controller.getProductsByPriceDesc);
+app.get("/products/brand", controller.getProductsByBrand);
+app.get("/products/brand_desc", controller.getProductsByBrandDesc);
+ 
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`);
 });

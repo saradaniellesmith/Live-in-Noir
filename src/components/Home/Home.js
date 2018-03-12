@@ -7,7 +7,7 @@ class Home extends Component {
     render() {
         return (
            <div id="cf">
-              <img class="top" src={require("./home-image.png")} />
+              <img className="top" src={require("./home-image.png")} />
               {/* <img class="bottom"src={require("./forest.jpg")} /> */}
            </div>
        
