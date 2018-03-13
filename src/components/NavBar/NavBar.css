@@ -3,6 +3,11 @@
     background: transparent;
     height: 9vh;
 }
+
+.nav:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
+
 /* 
 .live-in-noir {
     width: 320px;
@@ -20,7 +25,7 @@
     justify-content: flex-start;
     width: 400px;
     margin-top: 15px;
-    margin-left: 15px;
+    margin-left: 20px;
 }
 
 .menu {
@@ -39,6 +44,7 @@
     float: left;
     align-content: center;
     align-items: center;
+    margin-right: 10px;
 }
 
 .menu p {
@@ -48,6 +54,15 @@
     margin: 0 30px;
     font-size: 13px;
     letter-spacing: 1px;
+}
+
+.logout {
+    clear: right;
+    text-decoration: none;
+    display: inline;
+    font-size: 13px;
+    letter-spacing: 1px; 
+    color: black;
 }
 
 label {
@@ -91,4 +106,6 @@ label {
         display: block;
         background: white;
     }
+
+    
 }

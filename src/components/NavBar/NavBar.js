@@ -3,12 +3,30 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'; 
 
+import axios from 'axios';
+
 import './bag.png';
-import './LIVEINNOIR.png';
-import './LIVEIN.png';
 import './NavBar.css';
 
 class NavBar extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            user: false
+        };
+    }
+
+    componentDidMount() {
+        axios.get('/checkUser').then(response => {
+            console.log(response)
+            if(response.data) {
+                this.setState({user: true})
+            } else {
+                this.setState({user: false})
+            }
+        })
+    }
 
     render() {
         return (
@@ -23,7 +41,8 @@ class NavBar extends Component {
                 <p> <Link to="/shop/:shop" style={{ textDecoration: 'none', color: 'black' }}> SHOP </Link> </p>
                 {/* <p> <Link to="/about"> ABOUT </Link> </p> */}
                 <p> <Link to="/shoppingcart" style={{ textDecoration: 'none', color: 'black' }}> <img src={require('./bag.png')} style={{ height: '3.2vh', width: 'auto'}}/> </Link> </p>
-                <p> <a href={process.env.REACT_APP_LOGIN} style={{ textDecoration: 'none', color: 'black' }}> LOGIN </a> </p>
+                <p> {!this.state.user ? <a href={process.env.REACT_APP_LOGIN} style={{ textDecoration: 'none', color: 'black' }}> LOGIN </a> 
+                : <a href="http://localhost:3001/logout" className="logout"> LOGOUT </a> } </p>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import axios from "axios";
-// import Image from "react-image-resizer";
+import swal from 'sweetalert';
 
 import './ProductDetails.css';
 
@@ -35,10 +35,10 @@ class ProductDetails extends  Component {
       .catch(console.log);
   }
 
+
   render() {
     console.log(this.state.product);
-    var product = this.state.product.map((product, index) => {
-      console.log(this);
+    const product = this.state.product.map((product, index) => {
       return (
         <div className="product-details-page" key={index}>
         <div className="details-images">
@@ -52,13 +52,24 @@ class ProductDetails extends  Component {
             <h3> {product.price}.00 </h3>
             {/* <p> Description </p> */}
             <p className="editors-note"> {product.editor_note} </p>
-            <button className="add" onClick={() => this.addToCart(product)}> ADD ME, YOU KNOW YOU WANT TO </button>
+            <button className="add" onClick={() => {this.addToCart(product)
+              swal({
+                title: "Added to Cart!",
+                text: "",
+                icon: "success",
+                button: "Keep Shopping!",
+              });
+            }} > ADD TO CART </button>
           </div>
         </div>
       );
     });
 
-    return <div> {product} </div>;
+    return (
+      <div>
+        <div> {product} </div> 
+      </div>
+    )
   }
 }
 

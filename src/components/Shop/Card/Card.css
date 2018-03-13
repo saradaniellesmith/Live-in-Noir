@@ -1,11 +1,17 @@
 .prod-container {
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 20px;
 }
 
 .prod-image {
     width: 60%;
     height: auto;
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+.prod-image:hover {
+    width: 63%;
 }
 
 .description {

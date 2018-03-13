@@ -2,7 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
+import StripeCheckout from 'react-stripe-checkout';
 
+import Checkout from '../Checkout/Checkout'
 import './ShoppingCart.css'
 
 class ShoppingCart extends Component {
@@ -48,8 +50,11 @@ class ShoppingCart extends Component {
             <img className="cart-photo" src={product.image}/>
             <h1 className="cart-name"> {product.product_description} </h1>
             <h2 className="cart-price"> {product.price}.00 </h2>
-            <button onClick={() => this.deleteFromCart(product.product_id)}> Remove </button>
+            <button className="remove" onClick={() => this.deleteFromCart(product.product_id)}> Remove </button>
           </div>
+            <div className="checkout">
+            
+            </div>
           </div>
         );
       });
@@ -65,12 +70,12 @@ class ShoppingCart extends Component {
         <div className="cart-list"> 
           <div> {cartList} </div>
           <p> Total: ${total}.00 </p>
-        </div>
-        
-        
-
-
-
+          <Checkout 
+             name={'The Road to Learn React'}
+             description={'Only the Book'}
+             amount={1}
+             />
+        </div> 
       </div>
     );
   }

@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import Card from "./Card/Card";
+import './Shop.css';
 
 class Shop extends Component {
   constructor(props) {
@@ -43,17 +44,17 @@ class Shop extends Component {
 
         <div className="sort-search-bar">
           <div className="sort">
-            <select onChange={ e => this.handleSort(e.target.value) }>
-              <option value=''> Filter </option>
-              <option value='price'> Price (low to high) </option>
-              <option value='price_desc'> Price (high to low) </option>
+            <select className="sort-menu" onChange={ e => this.handleSort(e.target.value) }>
+              <option value=''> FILTER </option>
+              <option value='price'> Price (Low to High) </option>
+              <option value='price_desc'> Price (High to Low) </option>
               <option value='brand'> Designer (A-Z) </option>
               <option value='brand_desc'> Designer (Z-A) </option>
             </select> 
           </div>
         </div>
 
-      <div style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}> {products} </div>
+      <div className="shop-container" style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}> {products} </div>
 
     </div>
    )

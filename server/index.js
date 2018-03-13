@@ -6,9 +6,16 @@ const cors = require("cors");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const massive = require("massive");
+const stripe = require("stripe");
+const bodyParser = require("body-parser");
 
 const Middleware = require("./middleware/middleware");
 const controller = require("./controllers/controller");
+
+const SERVER_CONFIGS = require('./constants/server');
+
+const configureServer = require('./server');
+const configureRoutes = require('./routes');
 
 const port = 3001;
 
@@ -19,8 +26,14 @@ const {
   DOMAIN,
   CLIENT_ID,
   CLIENT_SECRET,
-  SESSION_SECRET
+  SESSION_SECRET,
+  PUBLISH_KEY,
+  SECRET_KEY
 } = process.env;
+
+
+configureServer(app);
+configureRoutes(app);
 
 // SESSION //
 app.use(
@@ -81,7 +94,7 @@ passport.deserializeUser((user, done) => {
 
 app.use(Middleware);
 
-// END POINTS //
+// Auth0 //
 app.get(
   "/auth",
   passport.authenticate("auth0", {
@@ -89,16 +102,35 @@ app.get(
     failureRedirect: "http://localhost:3000/#/fail"
   })
 );
+app.get('me', (req, res, next) => {
+  if(!req.user)res.redirect('/auth');
+  else {
+    res.status(200).send(req.user)
+  }
+});
+app.get('/logout', (req, res, next) => {
+  req.session.destroy( () => {
+    res.redirect('http://localhost:3000/');
+  });
+});
+app.get("/checkUser", (req, res, next) => {
+  res.status(200).send(req.user)
+});
+
+// Endpoints //
 app.get("/products", controller.getProducts);
 app.get("/productdetails/:product_id", controller.getProductById);
 app.post("/shoppingcart", controller.addToCart);
 app.get("/shoppingcart", controller.cart);
-app.delete("/delete/:id", controller.deleteFromCart);
+app.delete("/delete/:product_id", controller.deleteFromCart);
 app.get("/products/price", controller.getProductsByPrice);
 app.get("/products/price_desc", controller.getProductsByPriceDesc);
 app.get("/products/brand", controller.getProductsByBrand);
 app.get("/products/brand_desc", controller.getProductsByBrandDesc);
- 
+
+// Stripe //
+
+
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`);
 });
