@@ -1,0 +1,1 @@
+SELECT * FROM shoes WHERE shoe_id = $1;

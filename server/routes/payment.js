@@ -5,6 +5,7 @@ const postStripeCharge = res => (stripeErr, stripeRes) => {
         res.status(500).send({ error: stripeErr });
     } else {
         res.status(200).send({ success: stripeRes });
+        
     }
 }
 

@@ -69,11 +69,11 @@ class ShoppingCart extends Component {
       <div>
         <div className="cart-list"> 
           <div> {cartList} </div>
-          <p> Total: ${total}.00 </p>
+          <p> TOTAL: ${total}.00 </p>
           <Checkout 
-             name={'The Road to Learn React'}
-             description={'Only the Book'}
-             amount={1}
+             name={'LIVE IN NOIR'}
+             description={'Thank you!'}
+             amount={total}
              />
         </div> 
       </div>

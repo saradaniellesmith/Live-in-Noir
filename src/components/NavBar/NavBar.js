@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'; 
+import Radium from 'radium';
 
 import axios from 'axios';
 
@@ -29,19 +30,27 @@ class NavBar extends Component {
     }
 
     render() {
-        return (
 
+        let styles = {
+            base: {
+                color: 'black',
+                textDecoration: 'none',
+            },
+        }
+
+        return (
+         
     <div className ="nav">  
         <label htmlFor="toggle"> &#9776; </label>
         <input type="checkbox" id="toggle"/>
         <div className ="menu">
-            <div className="logo">  <Link to="/" style={{ textDecoration: 'none', color: 'black' }}> LIVE IN NOIR </Link> </div>
+            <div className="logo">  <Link to="/" style={styles.base}> LIVE IN NOIR </Link> </div>
             <div className="routes">
-                <p> <Link to="/" style={{ textDecoration: 'none', color: 'black' }}> HOME </Link> </p>
-                <p> <Link to="/shop/:shop" style={{ textDecoration: 'none', color: 'black' }}> SHOP </Link> </p>
+                <p> <Link to="/shop/:shop" style={styles.base}> CLOTHING </Link> </p>
+                <p> <Link to="/shoes" style={{ textDecoration: 'none', color: 'black' }}> SHOES </Link> </p>
                 {/* <p> <Link to="/about"> ABOUT </Link> </p> */}
-                <p> <Link to="/shoppingcart" style={{ textDecoration: 'none', color: 'black' }}> <img src={require('./bag.png')} style={{ height: '3.2vh', width: 'auto'}}/> </Link> </p>
-                <p> {!this.state.user ? <a href={process.env.REACT_APP_LOGIN} style={{ textDecoration: 'none', color: 'black' }}> LOGIN </a> 
+                <p> <Link to="/shoppingcart" style={styles.base}> <img src={require('./bag.png')} style={{ height: '3.2vh', width: 'auto'}}/> </Link> </p>
+                <p> {!this.state.user ? <a href={process.env.REACT_APP_LOGIN} style={styles.base}> LOGIN </a> 
                 : <a href="http://localhost:3001/logout" className="logout"> LOGOUT </a> } </p>
             </div>
         </div>
@@ -50,6 +59,7 @@ class NavBar extends Component {
         )
     }
 }
+
 
 const mapStateToProps = state => state;
 

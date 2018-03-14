@@ -28,7 +28,6 @@ class ProductDetails extends  Component {
   }
 
   addToCart(product) {
-    console.log("test");
     axios
       .post("/shoppingcart", product)
       .then(response => response.data.cart)
@@ -37,7 +36,7 @@ class ProductDetails extends  Component {
 
 
   render() {
-    console.log(this.state.product);
+    // console.log(this.state.product);
     const product = this.state.product.map((product, index) => {
       return (
         <div className="product-details-page" key={index}>

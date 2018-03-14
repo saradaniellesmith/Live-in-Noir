@@ -6,21 +6,9 @@ const cors = require("cors");
 const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const massive = require("massive");
-const stripe = require("stripe");
 const bodyParser = require("body-parser");
-
 const Middleware = require("./middleware/middleware");
 const controller = require("./controllers/controller");
-
-const SERVER_CONFIGS = require('./constants/server');
-
-const configureServer = require('./server');
-const configureRoutes = require('./routes');
-
-const port = 3001;
-
-const app = express();
-
 const {
   CONNECTION_STRING,
   DOMAIN,
@@ -28,12 +16,13 @@ const {
   CLIENT_SECRET,
   SESSION_SECRET,
   PUBLISH_KEY,
-  SECRET_KEY
+  STRIPE_SECRET_KEY
 } = process.env;
+const configureStripe = require("stripe")(STRIPE_SECRET_KEY);
 
+const port = 3001;
 
-configureServer(app);
-configureRoutes(app);
+const app = express();
 
 // SESSION //
 app.use(
@@ -120,16 +109,36 @@ app.get("/checkUser", (req, res, next) => {
 // Endpoints //
 app.get("/products", controller.getProducts);
 app.get("/productdetails/:product_id", controller.getProductById);
+app.get("/shoes", controller.getShoes);
+app.get("/shoedetails/:shoe_id", controller.getShoesById);
+
+// Cart Endpoints //
 app.post("/shoppingcart", controller.addToCart);
 app.get("/shoppingcart", controller.cart);
 app.delete("/delete/:product_id", controller.deleteFromCart);
+
+// Filter Endpoints //
 app.get("/products/price", controller.getProductsByPrice);
 app.get("/products/price_desc", controller.getProductsByPriceDesc);
 app.get("/products/brand", controller.getProductsByBrand);
 app.get("/products/brand_desc", controller.getProductsByBrandDesc);
 
-// Stripe //
+// Stripe Payment //
+const postStripeCharge = res => (stripeErr, stripeRes) => {
+  if(stripeErr) {
+    res.status(500).send({ error: stripeErr });
+  } else {
+    res.status(200).send({ success: stripeRes });
 
+    app.get("db")
+      .addUserInfo
+
+  }
+}
+
+app.post("/pay", (req, res) => {
+  configureStripe.charges.create(req.body, postStripeCharge(res));
+});
 
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`);

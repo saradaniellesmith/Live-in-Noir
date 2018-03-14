@@ -10,6 +10,8 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import Shop from './components/Shop/Shop';
 import ShoppingCart from './components/ShoppingCart/ShoppingCart';
 import ReturnPolicy from './components/ReturnPolicy/ReturnPolicy';
+import Shoes from './components/Shoes/Shoes';
+import ShoeDetails from './components/ShoeDetails/ShoeDetails';
 
 export default (
     <Switch>
@@ -21,6 +23,8 @@ export default (
         <Route path="/contact" component={Contact} /> 
         <Route path="/about" component={About} />
         <Route path="/returnpolicy" component={ReturnPolicy} />
+        <Route path="/shoes" component={Shoes} />
+        <Route path="/shoedetails/:shoe_id" component={ShoeDetails} />
     </Switch>
 );
 

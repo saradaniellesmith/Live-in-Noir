@@ -1,0 +1,32 @@
+.shoe-container {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.shoe-image {
+    width: 60%;
+    height: auto;
+    -webkit-transition: .4s ease-in-out;
+    transition: .4s ease-in-out;
+}
+
+.shoe-image:hover {
+    width: 63%;
+}
+
+.shoe-description {
+    font-size: 15px;
+    margin: .7em;
+}
+
+.shoe-brand {
+    font-size: 13px;
+    color: #4c4c4b;
+    margin: .5em;
+}
+
+.shoe-price {
+    font-size: 13px;
+    margin: 0;
+}
+

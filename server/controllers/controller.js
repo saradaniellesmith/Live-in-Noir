@@ -18,6 +18,22 @@ module.exports = {
       .catch(() => res.status(500).json());
   },
 
+  getShoes: (req, res, next) => {
+    const db = req.app.get("db");
+    db 
+      .getShoes()
+      .then(shoes => res.status(200).json(shoes))
+      .catch(() => res.status(500).json());
+  },
+
+  getShoesById: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+      .getShoesById([req.params.shoe_id])
+      .then(shoes => res.status(200).json(shoes))
+      .catch(() => res.status(500).json());
+  },
+
   addToCart: (req, res, next) => {
     req.session.user.cart.push(req.body);
     res.status(200).json(req.session.user);
