@@ -2,3 +2,92 @@
     height: 100%;
     width: 100%;
 }
+
+.top-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    font-size: 120px;
+    font-weight: bold;
+}
+
+.top-text {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.mid-container {
+    position: relative;
+    text-align: center;
+    font-size: 28px;
+    /* font-weight: bold; */
+}
+
+.mid-left {
+    position: absolute;
+    top: 82%;
+    left: 25%;
+}
+
+.mid-left a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 50ms linear 0s;
+    padding-bottom: .5em;
+}
+
+.mid-left a:hover {
+    border-bottom-color: white;
+}
+
+.mid-right {
+    position: absolute;
+    top: 82%;
+    right: 25%;
+}
+
+.mid-right a {
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 50ms linear 0s;
+    padding-bottom: .5em;
+    
+}
+
+.mid-right a:hover {
+    border-bottom-color: white;
+}
+
+.mid {
+    width: 40%;
+    height: auto;
+    padding: 30px;
+}
+
+@media only screen and (max-width: 650px) {
+
+    .mid-left {
+        top: 33%;
+        left: 34%;
+    }
+
+    .mid-right {
+        top: 80%;
+        right: 38%;
+    }
+
+    .mid {
+        width: 80%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .top {
+        display: none;
+    }
+}

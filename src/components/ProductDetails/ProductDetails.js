@@ -56,7 +56,7 @@ class ProductDetails extends  Component {
                 title: "Added to Cart!",
                 text: "",
                 icon: "success",
-                button: "Keep Shopping!",
+                button: "KEEP SHOPPING!",
               });
             }} > ADD TO CART </button>
           </div>

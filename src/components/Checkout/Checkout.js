@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import StripeCheckout from 'react-stripe-checkout';
-
+import swal from 'sweetalert';
 
 import './Checkout.css';
 import STRIPE_PUBLISHABLE from '../../constants/stripe';
@@ -27,8 +27,21 @@ const onToken = (amount, description) => token =>
         currency: CURRENCY,
         amount: fromUsdToCent(amount)
     })
-    .then(successPayment)
-    .catch(errorPayment);
+    .then(response =>  {
+          swal({
+        title: "Payment Successful",
+        text: '',
+        icon: "success",
+        button: "THANK YOU",
+      })})
+    .catch(response => {
+        swal({
+            title: "Payment Unsuccessful",
+            text: '',
+            icon: "error",
+            button: "TRY AGAIN",
+          })
+    });
 
     const Checkout = ({ name, description, amount }) =>
     <StripeCheckout

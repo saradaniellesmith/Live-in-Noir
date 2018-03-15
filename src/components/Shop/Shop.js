@@ -11,7 +11,8 @@ class Shop extends Component {
 
     this.state = {
       productList: [],
-      sort: ''
+      sort: '',
+      search: ''
     }
     this.handleSort=this.handleSort.bind(this);
   }
@@ -31,6 +32,7 @@ class Shop extends Component {
   }
 
   render() {
+    // let filteredProducts = 
     var products = this.state.productList.map(function(product, index) {
       return (
         <Link to={`/productdetails/${product.product_id}`} key={index} style={{ width: '33%', textDecoration: 'none', color: 'black'}}>

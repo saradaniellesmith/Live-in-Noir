@@ -124,18 +124,28 @@ app.get("/products/brand", controller.getProductsByBrand);
 app.get("/products/brand_desc", controller.getProductsByBrandDesc);
 
 // Stripe Payment //
-const postStripeCharge = res => (stripeErr, stripeRes) => {
+const postStripeCharge = (res, req) => (stripeErr, stripeRes) => {
   if(stripeErr) {
     res.status(500).send({ error: stripeErr });
   } else {
     res.status(200).send({ success: stripeRes });
+    console.log(stripeRes);
 
     app.get("db")
-      .addUserInfo
-
+      .addUserInfo([
+        stripeRes.source.name,
+        stripeRes.source.address_line1,
+        stripeRes.source.address_city,
+        stripeRes.source.address_zip,
+        stripeRes.source.country,
+        stripeRes.source.address_state,
+        stripeRes.amount
+      ])
+      .then()
+      .catch((err) => {console.log(err)
+        res.status(500).json()});
   }
 }
-
 app.post("/pay", (req, res) => {
   configureStripe.charges.create(req.body, postStripeCharge(res));
 });

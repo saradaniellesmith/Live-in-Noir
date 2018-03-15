@@ -28,6 +28,11 @@
     margin-left: 20px;
 }
 
+.logo a {
+    text-decoration: none;
+    color: black;
+}
+
 .menu {
     display: flex;
     flex-direction: row;
@@ -53,6 +58,19 @@
     margin: 0 25px;
     font-size: 13px;
     letter-spacing: 1px;
+}
+
+.routes a {
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom-color 50ms linear 0s;
+    padding-bottom: .5em;
+}
+
+.routes a:hover {
+    border-bottom-color: black;
+    color: black;
 }
 
 .logout {

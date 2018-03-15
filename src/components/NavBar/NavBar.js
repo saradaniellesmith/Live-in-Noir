@@ -30,27 +30,19 @@ class NavBar extends Component {
     }
 
     render() {
-
-        let styles = {
-            base: {
-                color: 'black',
-                textDecoration: 'none',
-            },
-        }
-
         return (
          
     <div className ="nav">  
         <label htmlFor="toggle"> &#9776; </label>
         <input type="checkbox" id="toggle"/>
         <div className ="menu">
-            <div className="logo">  <Link to="/" style={styles.base}> LIVE IN NOIR </Link> </div>
+            <div className="logo">  <Link to="/" > LIVE IN NOIR </Link> </div>
             <div className="routes">
-                <p> <Link to="/shop/:shop" style={styles.base}> CLOTHING </Link> </p>
-                <p> <Link to="/shoes" style={{ textDecoration: 'none', color: 'black' }}> SHOES </Link> </p>
+                <p> <Link to="/shop/:shop" > CLOTHING </Link> </p>
+                <p> <Link to="/shoes" > SHOES </Link> </p>
                 {/* <p> <Link to="/about"> ABOUT </Link> </p> */}
-                <p> <Link to="/shoppingcart" style={styles.base}> <img src={require('./bag.png')} style={{ height: '3.2vh', width: 'auto'}}/> </Link> </p>
-                <p> {!this.state.user ? <a href={process.env.REACT_APP_LOGIN} style={styles.base}> LOGIN </a> 
+                <p> <Link to="/shoppingcart" > <img src={require('./bag.png')} style={{ height: '3.2vh', width: 'auto'}}/> </Link> </p>
+                <p> {!this.state.user ? <a href={process.env.REACT_APP_LOGIN} > LOGIN </a> 
                 : <a href="http://localhost:3001/logout" className="logout"> LOGOUT </a> } </p>
             </div>
         </div>

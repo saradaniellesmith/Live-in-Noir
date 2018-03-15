@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
 import axios from "axios";
 import StripeCheckout from 'react-stripe-checkout';
+import swal from 'sweetalert';
 
 import Checkout from '../Checkout/Checkout'
 import './ShoppingCart.css'
