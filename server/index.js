@@ -7,7 +7,7 @@ const passport = require("passport");
 const Auth0Strategy = require("passport-auth0");
 const massive = require("massive");
 const bodyParser = require("body-parser");
-const Middleware = require("./middleware/middleware");
+const Middleware = require("./middleware/Middleware");
 const controller = require("./controllers/controller");
 const {
   CONNECTION_STRING,
