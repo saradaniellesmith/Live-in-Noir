@@ -12,7 +12,6 @@ class Shop extends Component {
     this.state = {
       productList: [],
       sort: '',
-      search: ''
     }
     this.handleSort=this.handleSort.bind(this);
   }

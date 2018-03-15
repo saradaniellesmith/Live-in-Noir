@@ -55,8 +55,8 @@ module.exports = {
   login: (res, req, next) => {
     console.log("hit");
     passport.authenticate("auth0", {
-      successRedirect: "http://localhost:3000/#/shop",
-      failureRedirect: "http://localhost:3000/#/"
+      successRedirect: "http://localhost:3001/#/shop",
+      failureRedirect: "http://localhost:3001/#/"
     })
   },
 

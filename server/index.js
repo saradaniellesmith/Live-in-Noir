@@ -25,6 +25,9 @@ const port = 3001;
 const app = express();
 
 // SESSION //
+
+app.use(express.static(`${__dirname}/../build`));
+
 app.use(
   session({
     secret: SESSION_SECRET,
@@ -87,8 +90,8 @@ app.use(Middleware);
 app.get(
   "/auth",
   passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3000/#/shop",
-    failureRedirect: "http://localhost:3000/#/fail"
+    successRedirect: "http://localhost:3001/#/shop",
+    failureRedirect: "http://localhost:3001/#/fail"
   })
 );
 app.get('me', (req, res, next) => {
@@ -99,7 +102,7 @@ app.get('me', (req, res, next) => {
 });
 app.get('/logout', (req, res, next) => {
   req.session.destroy( () => {
-    res.redirect('http://localhost:3000/');
+    res.redirect('http://localhost:3001/');
   });
 });
 app.get("/checkUser", (req, res, next) => {
@@ -148,6 +151,11 @@ const postStripeCharge = (res, req) => (stripeErr, stripeRes) => {
 }
 app.post("/pay", (req, res) => {
   configureStripe.charges.create(req.body, postStripeCharge(res));
+});
+
+const path = require("path");
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../build/index.html'));
 });
 
 app.listen(port, () => {

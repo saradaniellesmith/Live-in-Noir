@@ -3,6 +3,7 @@ import axios from "axios";
 import {Link} from "react-router-dom";
 
 import ShoesCard from './ShoesCard/ShoesCard';
+import './ShoesCard/ShoesCard';
 
 class Shoes extends Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class Shoes extends Component {
 
         this.state = {
             shoesList: [],
-            
+            sort: ''
         }
     }
 
@@ -19,6 +20,8 @@ class Shoes extends Component {
             this.setState({ shoesList: response.data });
         });
     }
+
+    handleSort
 
     render(){
         var shoes = this.state.shoesList.map(function(shoes, index) {

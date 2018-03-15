@@ -1,6 +1,6 @@
 .top {
     height: 100%;
-    width: 100%;
+    width: 97%;
 }
 
 .top-container {
@@ -22,13 +22,13 @@
 .mid-container {
     position: relative;
     text-align: center;
-    font-size: 28px;
+    font-size: 26px;
     /* font-weight: bold; */
 }
 
 .mid-left {
     position: absolute;
-    top: 82%;
+    top: 89%;
     left: 25%;
 }
 
@@ -37,7 +37,7 @@
     color: white;
     border-bottom: 1px solid transparent;
     transition: border-bottom-color 50ms linear 0s;
-    padding-bottom: .5em;
+    padding-bottom: .25em;
 }
 
 .mid-left a:hover {
@@ -46,7 +46,7 @@
 
 .mid-right {
     position: absolute;
-    top: 82%;
+    top: 89%;
     right: 25%;
 }
 
@@ -55,7 +55,7 @@
     color: white;
     border-bottom: 1px solid transparent;
     transition: border-bottom-color 50ms linear 0s;
-    padding-bottom: .5em;
+    padding-bottom: .25em;
     
 }
 
