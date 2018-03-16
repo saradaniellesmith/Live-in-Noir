@@ -10,9 +10,9 @@
     transition: .4s ease-in-out;
 }
 
-.prod-image:hover {
+/* .prod-image:hover {
     width: 63%;
-}
+} */
 
 .description {
     font-size: 15px;
@@ -26,8 +26,14 @@
 }
 
 .price {
-    font-size: 13px;
-    margin: 0;
+    font-size: 15px;
+    margin: 0 auto;
+    width: 50px;
+    border-top: 1px solid black;
+    padding-top: 10px;
 }
 
 
+@media only screen and (max-width: 650px) {
+    
+}

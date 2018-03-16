@@ -44,6 +44,7 @@ class NavBar extends Component {
                 <p> <Link to="/shoppingcart" > <img src={require('./bag.png')} style={{ height: '3.2vh', width: 'auto'}}/> </Link> </p>
                 <p> {!this.state.user ? <a href={process.env.REACT_APP_LOGIN} > LOGIN </a> 
                 : <a href="http://localhost:3001/logout" className="logout"> LOGOUT </a> } </p>
+                <p> <Link to="/likes" > FAVS </Link> </p>
             </div>
         </div>
     </div>

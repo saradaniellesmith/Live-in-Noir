@@ -66,5 +66,9 @@
         margin: 0;
         padding: 0;
     }
+
+    .footer-quote {
+        margin-bottom: 15px;
+    }
     
 }

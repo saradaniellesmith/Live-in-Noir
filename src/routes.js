@@ -26,6 +26,7 @@ export default (
         <Route path="/returnpolicy" component={ReturnPolicy} />
         <Route path="/shoes" component={Shoes} />
         <Route path="/shoedetails/:shoe_id" component={ShoeDetails} />
+        <Route path="/likes" component={Likes} />
         {/* <Route path="/likes" component={Likes} /> */}
     </Switch>
 );

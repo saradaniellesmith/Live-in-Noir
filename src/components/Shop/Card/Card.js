@@ -12,8 +12,9 @@ render() {
             <img className="prod-image" src={this.props.product.image} />
                 <div className="product-details" >
                     <h1 className="description"> {this.props.product.product_description} </h1>
-                    <p className="brand"> {this.props.product.brand_name} </p>
+                    {/* <p className="brand"> {this.props.product.brand_name} </p> */}
                     <p className="price"> {this.props.product.price}.00 </p> 
+                    
                 </div>
         </div> 
     )

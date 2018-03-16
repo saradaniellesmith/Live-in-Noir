@@ -21,10 +21,14 @@ class Home extends Component {
                     <div className="top-text">  </div>
                 </div>
                 <div className="mid-container">
-                    <img className="mid" src={require("./clothing1.png")} />
-                    <img className="mid" src={require("./shoes.png")} />
-                    <div className="mid-left"> <Link to="/shop">  CLOTHES </Link> </div>
-                    <div className="mid-right"> <Link to="/shoes">  SHOES </Link> </div>
+                    <Link to="/shop"> 
+                        <img className="mid" src={require("./clothing1.png")} /> 
+                    </Link>
+                    <Link to="/shoes"> 
+                        <img className="mid" src={require("./shoes.png")} /> 
+                    </Link>
+                    <div className="mid-left"> CLOTHES </div>
+                    <div className="mid-right"> SHOES </div>
                 </div>
 
            </div>

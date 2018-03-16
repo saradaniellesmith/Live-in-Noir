@@ -13,6 +13,7 @@ class Shop extends Component {
       productList: [],
       sort: '',
     }
+    this.handleProdLike=this.handleProdLike.bind(this);
     this.handleSort=this.handleSort.bind(this);
   }
 
@@ -30,19 +31,26 @@ class Shop extends Component {
     }).catch(console.log);
   }
 
+  handleProdLike(id) {
+    console.log(id);
+    axios.post("/prodlikes", {id: id})
+      .catch(console.log);
+  }
+  
   render() {
-    // let filteredProducts = 
-    var products = this.state.productList.map(function(product, index) {
+    var products = this.state.productList.map((product, index) => {
       return (
-        <Link to={`/productdetails/${product.product_id}`} key={index} style={{ width: '33%', textDecoration: 'none', color: 'black'}}>
+      <div>
+        <Link className="shop-link" to={`/productdetails/${product.product_id}`} key={index}>
           <Card product={product} key={index} />
         </Link>
+        <button onClick={ () => {this.handleProdLike(product.product_id)}}> Like </button> 
+      </div>
       );
     });
 
     return( 
       <div className="shop-page">
-
         <div className="sort-search-bar">
           <div className="sort">
             <select className="sort-menu" onChange={ e => this.handleSort(e.target.value) }>
@@ -55,7 +63,7 @@ class Shop extends Component {
           </div>
         </div>
 
-      <div className="shop-container" style={{display: 'flex', justifyContent: 'center', flexWrap: 'wrap'}}> {products} </div>
+      <div className="shop-container" > {products} </div>
 
     </div>
    )

@@ -23,7 +23,6 @@
     position: relative;
     text-align: center;
     font-size: 26px;
-    /* font-weight: bold; */
 }
 
 .mid-left {
@@ -32,7 +31,7 @@
     left: 25%;
 }
 
-.mid-left a {
+.mid-left {
     text-decoration: none;
     color: white;
     border-bottom: 1px solid transparent;
@@ -40,7 +39,7 @@
     padding-bottom: .25em;
 }
 
-.mid-left a:hover {
+.mid-left:hover {
     border-bottom-color: white;
 }
 
@@ -50,7 +49,7 @@
     right: 25%;
 }
 
-.mid-right a {
+.mid-right {
     text-decoration: none;
     color: white;
     border-bottom: 1px solid transparent;
@@ -59,7 +58,7 @@
     
 }
 
-.mid-right a:hover {
+.mid-right:hover {
     border-bottom-color: white;
 }
 

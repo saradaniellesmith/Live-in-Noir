@@ -90,6 +90,65 @@ module.exports = {
     .getProductsByBrandDesc()
     .then(products => res.status(200).json(products))
     .catch( () => res.status(500).json());
+  },
+
+  getShoesByPrice: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getShoesByPrice()
+    .then(products => res.status(200).json(products))
+    .catch( () => res.status(500).json());
+  },
+
+  getShoesByPriceDesc: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getShoesByPriceDesc()
+    .then(products => res.status(200).json(products))
+    .catch( () => res.status(500).json());
+  },
+
+  getShoesByBrand: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getShoesByBrand()
+    .then(products => res.status(200).json(products))
+    .catch( () => res.status(500).json());
+  },
+
+  getShoesByBrandDesc: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getShoesByBrandDesc()
+    .then(products => res.status(200).json(products))
+    .catch( () => res.status(500).json());
+  },
+
+  getUserLikes: (req, res, next) => {
+    const db = req.app.get("db");
+    db
+    .getUserLikes([req.session.user])
+    .then(likes => res.status(200).json(likes))
+    .catch( () => res.status(500).json());
+  },
+
+  likeProducts: (req, res, next) => {
+    const db = req.app.get("db");
+    console.log( req.user);
+    db
+    .addUserLikesByProducts([req.body.id, req.user.id])
+    .then(likes => res.status(200).json(likes))
+    .catch( () => res.status(500).json());
+  },
+
+  likeShoes: (req, res, next) => {
+    const db = req.app.get("db");
+    console.log(req.user);
+    db
+    .addUserLikesByShoes([req.body.id, req.user.id])
+    .then(likes => res.status(200).json(likes))
+    .catch( () => res.status(500).json());
   }
+
 
 };

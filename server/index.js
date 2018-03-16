@@ -16,18 +16,18 @@ const {
   CLIENT_SECRET,
   SESSION_SECRET,
   PUBLISH_KEY,
-  STRIPE_SECRET_KEY
+  STRIPE_SECRET_KEY,
 } = process.env;
 const configureStripe = require("stripe")(STRIPE_SECRET_KEY);
 
-const port = 3001;
+
+const port =  3001; // process.env.PORT
 
 const app = express();
 
-// SESSION //
-
 app.use(express.static(`${__dirname}/../build`));
 
+// SESSION //
 app.use(
   session({
     secret: SESSION_SECRET,
@@ -90,8 +90,8 @@ app.use(Middleware);
 app.get(
   "/auth",
   passport.authenticate("auth0", {
-    successRedirect: "http://localhost:3001/#/shop",
-    failureRedirect: "http://localhost:3001/#/fail"
+    successRedirect: "http://localhost:3000/#/shop",
+    failureRedirect: "http://localhost:3000/#/fail"
   })
 );
 app.get('me', (req, res, next) => {
@@ -125,6 +125,15 @@ app.get("/products/price", controller.getProductsByPrice);
 app.get("/products/price_desc", controller.getProductsByPriceDesc);
 app.get("/products/brand", controller.getProductsByBrand);
 app.get("/products/brand_desc", controller.getProductsByBrandDesc);
+app.get("/shoes/price", controller.getShoesByPrice);
+app.get("/shoes/price_desc", controller.getShoesByPriceDesc);
+app.get("/shoes/brand", controller.getShoesByBrand);
+app.get("/shoes/brand_desc", controller.getShoesByBrandDesc);
+
+// app.get("/likes", controller.getUserLikes);
+app.post("/prodlikes", controller.likeProducts);
+app.post("/shoelikes", controller.likeShoes);
+
 
 // Stripe Payment //
 const postStripeCharge = (res, req) => (stripeErr, stripeRes) => {
@@ -153,6 +162,7 @@ app.post("/pay", (req, res) => {
   configureStripe.charges.create(req.body, postStripeCharge(res));
 });
 
+// Hosting //
 const path = require("path");
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../build/index.html'));

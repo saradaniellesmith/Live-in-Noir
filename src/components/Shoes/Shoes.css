@@ -1,5 +1,29 @@
-a {
+.shoes-container {
+    margin: 70px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.shoes-link {
     width: 33%;
     text-decoration: none;
     color: black;
 }
+
+
+@media only screen and (max-width: 650px) {
+    .shoes-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: none;
+        margin: 0;
+    }
+
+    .shoes-link {
+        width: 80%;
+        text-decoration: none;
+        color: black;
+    }
+}
+
