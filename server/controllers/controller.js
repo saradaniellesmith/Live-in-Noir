@@ -126,15 +126,18 @@ module.exports = {
 
   getUserLikes: (req, res, next) => {
     const db = req.app.get("db");
+    console.log(req.user, "hello there");
     db
-    .getUserLikes([req.session.user])
-    .then(likes => res.status(200).json(likes))
+    .getUserLikes([req.user.id])
+    .then(likes => {
+      console.log(likes)
+      res.status(200).json(likes)})
     .catch( () => res.status(500).json());
   },
 
   likeProducts: (req, res, next) => {
     const db = req.app.get("db");
-    console.log( req.user);
+    console.log(req.user);
     db
     .addUserLikesByProducts([req.body.id, req.user.id])
     .then(likes => res.status(200).json(likes))

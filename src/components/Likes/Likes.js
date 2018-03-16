@@ -11,29 +11,30 @@ class Likes extends Component {
             
         }
     }
-    
+
     componentDidMount() {
-        axios.get("/getUserLikes").then(response => {
+        axios.get("/favs").then(response => {
+            console.log(response.data, "this is what we need");
             this.setState({ favsList: response.data });
-        });
+        }).catch(console.log)
     }
-   
 
     render() {
-        // let liked = map over favs list from database
-        return (
-            <div> mapped </div>
-        )
+       let liked = this.state.favsList.map((element, index) => {
+           return(
+            <div>
+               <p> {element.brand_name} </p>
+            </div>
+           )
+       })
 
         return(
 
             <div>
-
                 <p> Favs Page </p>
                 <button> edit </button>
                 <input placeHolder="favs page" />
-
-              <div> favs </div>
+               <div> {liked} </div>
             </div>
         )
     }

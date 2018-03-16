@@ -130,7 +130,7 @@ app.get("/shoes/price_desc", controller.getShoesByPriceDesc);
 app.get("/shoes/brand", controller.getShoesByBrand);
 app.get("/shoes/brand_desc", controller.getShoesByBrandDesc);
 
-// app.get("/likes", controller.getUserLikes);
+app.get("/favs", controller.getUserLikes);
 app.post("/prodlikes", controller.likeProducts);
 app.post("/shoelikes", controller.likeShoes);
 
