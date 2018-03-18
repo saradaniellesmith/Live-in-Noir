@@ -7,6 +7,7 @@ import Radium from 'radium';
 import axios from 'axios';
 
 import './bag.png';
+import './hearts.png';
 import './NavBar.css';
 
 class NavBar extends Component {
@@ -44,7 +45,7 @@ class NavBar extends Component {
                 <p> <Link to="/shoppingcart" > <img src={require('./bag.png')} style={{ height: '3.2vh', width: 'auto'}}/> </Link> </p>
                 <p> {!this.state.user ? <a href={process.env.REACT_APP_LOGIN} > LOGIN </a> 
                 : <a href="http://localhost:3001/logout" className="logout"> LOGOUT </a> } </p>
-                <p> <Link to="/likes" > FAVS </Link> </p>
+                <p> <Link to="/likes" > <img src={require('./hearts.png')} style={{ height: '3.2vh', width: 'auto'}}/> </Link> </p>
             </div>
         </div>
     </div>

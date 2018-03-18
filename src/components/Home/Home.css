@@ -7,16 +7,33 @@
     position: relative;
     text-align: center;
     color: white;
-    font-size: 120px;
-    font-weight: bold;
+    font-size: 13px;
 }
 
 .top-text {
     position: absolute;
-    top: 65%;
+    top: 85%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%;
+    transform: translate(-50%, -50%); 
+    border: 1px solid white;
+    width: 100px;
+    padding: 14px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: black;
+}
+
+.top-text:hover {
+    border: none;
+    color: black;
+    background: white;
 }
 
 .mid-container {
@@ -27,7 +44,7 @@
 
 .mid-left {
     position: absolute;
-    top: 89%;
+    top: 85%;
     left: 25%;
 }
 
@@ -45,7 +62,7 @@
 
 .mid-right {
     position: absolute;
-    top: 89%;
+    top: 85%;
     right: 25%;
 }
 

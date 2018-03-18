@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+
+import './Likes.css';
 
 class Likes extends Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class Likes extends Component {
             favsList: [],
             
         }
+        this.deleteLikes = this.deleteLikes.bind(this)
     }
 
     componentDidMount() {
@@ -19,22 +21,34 @@ class Likes extends Component {
         }).catch(console.log)
     }
 
+    deleteLikes(shoe_id) {
+        axios.delete(`/deletefavs/${shoe_id}`)
+        .then(response => {
+            this.setState({ favsList: response.data });
+        }).catch(console.log);
+    }
+
+
     render() {
+        console.log(this.state.favsList)
        let liked = this.state.favsList.map((element, index) => {
            return(
-            <div>
-               <p> {element.brand_name} </p>
+            <div className="favs-list">
+                 <img className="fav-image" src={element.image} />
+                 <button onClick={ () => this.deleteLikes(element.shoe_id)} > delete </button>
             </div>
            )
        })
 
         return(
 
-            <div>
-                <p> Favs Page </p>
-                <button> edit </button>
+            <div className="favs">
+                <p> Favorites </p>
                 <input placeHolder="favs page" />
-               <div> {liked} </div>
+                <button> Edit </button>
+              <div className="favs-container">
+                <div className="liked"> {liked} </div>
+              </div>
             </div>
         )
     }

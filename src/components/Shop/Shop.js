@@ -40,11 +40,11 @@ class Shop extends Component {
   render() {
     var products = this.state.productList.map((product, index) => {
       return (
-      <div>
+      <div className="shop-product">
         <Link className="shop-link" to={`/productdetails/${product.product_id}`} key={index}>
           <Card product={product} key={index} />
         </Link>
-        <button onClick={ () => {this.handleProdLike(product.product_id)}}> Like </button> 
+        {/* <button onClick={ () => {this.handleProdLike(product.product_id)}}> Like </button> */}
       </div>
       );
     });
@@ -62,9 +62,7 @@ class Shop extends Component {
             </select> 
           </div>
         </div>
-
       <div className="shop-container" > {products} </div>
-
     </div>
    )
   }

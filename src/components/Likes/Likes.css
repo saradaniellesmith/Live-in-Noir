@@ -1,0 +1,14 @@
+.fav-image {
+   width: 100%;
+   display: flex;
+   margin: 10px;
+   
+}
+
+.favs-container {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}

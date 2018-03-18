@@ -42,12 +42,12 @@ class Shoes extends Component {
         console.log(this.state.shoesList);
         var shoes = this.state.shoesList.map((shoes, index) => {
             return (
-                <div>
+                <div className="shop-shoes">
                 <Link className="shoes-link" to={`/shoedetails/${shoes.shoe_id}`} key={index} >
                    <ShoesCard shoes={shoes} key={index} />
                 </Link>
                 <button onClick={ () => {this.handleShoeLike(shoes.shoe_id)}}> Like </button>
-                </div>
+            </div>
             );
         });
 

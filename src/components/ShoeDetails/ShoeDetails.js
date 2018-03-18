@@ -1,9 +1,8 @@
 import React, {Component} from "react";
-import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
 import axios from "axios";
 import swal from 'sweetalert';
 
+import './ShoeDetails.css';
 
 class ShoeDetails extends Component {
     constructor(props) {
@@ -41,7 +40,19 @@ class ShoeDetails extends Component {
                         <img className="image-details" src={shoes.image3} />
                     </div>
                     <div className="shoe-info">
-                        <button className="add" onClick={() => {this.addToCart(shoes)}}> ADD TO CART </button>
+                        <h1> {shoes.brand_name} </h1>
+                        <h2> {shoes.product_description} </h2>
+                        <h3> ${shoes.price}.00 </h3>
+                        <h3 className="editors-note-title"> DESCRIPTION </h3>
+                        <p className="editors-note"> {shoes.editor_note} </p>
+                        <button className="add" onClick={() => {this.addToCart(shoes)
+                            swal({
+                                title: "Added to Cart!",
+                                text: "",
+                                icon: "success",
+                                button: "KEEP SHOPPING",
+                            });
+                        }}> ADD TO CART </button>
                     </div>
                 </div>
             )

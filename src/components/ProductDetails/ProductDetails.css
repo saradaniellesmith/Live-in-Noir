@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 60px;
-    margin-left: 230px;
+    margin-left: 15%;
 }
 
 .image-details {
@@ -21,7 +21,6 @@
     width: 35%;
     margin-left: 50%;
     position: fixed;
-    
     margin-top: 80px;
     text-align: left;
 }
@@ -44,7 +43,7 @@
 }
 
 .editors-note {
-    width: 90%;
+    width: 88%;
 } 
 
 .swal-button {

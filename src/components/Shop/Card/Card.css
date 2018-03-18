@@ -1,28 +1,21 @@
 .prod-container {
     margin-top: 40px;
     margin-bottom: 20px;
+    /* margin: 10px; */
 }
 
 .prod-image {
-    width: 60%;
+    width: 70%;
     height: auto;
+    padding: 15px;
+    margin: 15px;
     -webkit-transition: .4s ease-in-out;
     transition: .4s ease-in-out;
 }
 
-/* .prod-image:hover {
-    width: 63%;
-} */
-
 .description {
     font-size: 15px;
     margin: .7em;
-}
-
-.brand {
-    font-size: 13px;
-    color: #4c4c4b;
-    margin: .5em;
 }
 
 .price {
@@ -35,5 +28,11 @@
 
 
 @media only screen and (max-width: 650px) {
-    
+    .prod-image {
+        width: 90%;
+    }
+
+    .prod-container {
+        margin-top: 15px;
+    }
 }

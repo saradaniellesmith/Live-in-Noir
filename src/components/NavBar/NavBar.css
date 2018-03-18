@@ -100,6 +100,7 @@ label {
         display: block;
         cursor: pointer;
         color: black;
+        z-index: 50;
     }
 
     .menu {
@@ -107,6 +108,7 @@ label {
         width: 100%;
         display: none;
         background: white;
+        z-index: 50;
     }
     .menu p {
         display: block;
@@ -117,11 +119,13 @@ label {
         height: 50px;
         display: flex;
         align-items: center;
+        z-index: 50;
 
     }
     #toggle:checked + .menu {
         display: block;
         background: white;
+        z-index: 50;
     }
 
     

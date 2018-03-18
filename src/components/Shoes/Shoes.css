@@ -1,29 +1,54 @@
+.sort-menu {
+    border: 1px solid lightgray;
+    background: transparent;
+    height: 30px;
+    outline: none;
+    display: flex;
+    margin-top: 20px; 
+    margin-right: 30px;
+    display: flex;
+}
+
+.shop-link {
+    width: 40%;
+    text-decoration: none;
+    color: black;
+}
+
 .shoes-container {
-    margin: 70px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-.shoes-link {
-    width: 33%;
-    text-decoration: none;
-    color: black;
+.sort {
+    display: flex;
+    justify-content: flex-end;
 }
 
-
 @media only screen and (max-width: 650px) {
+
+    .sort-menu {
+        display: flex;
+        justify-content: center;
+        border: 1px solid lightgray;
+        border-radius: 2px;
+        background: transparent;
+        height: 20px;
+        outline: none;
+        margin: 0 auto;
+        margin-bottom: 30px;
+        
+    }
+
+    .sort {
+        display: flex;
+        justify-content: center;
+    }
+
     .shoes-container {
         display: flex;
         justify-content: center;
         flex-wrap: none;
-        margin: 0;
-    }
-
-    .shoes-link {
-        width: 80%;
-        text-decoration: none;
-        color: black;
     }
 }
-

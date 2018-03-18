@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from 'react-router-dom'; 
 import { Link } from 'react-router-dom';
 
 import "./Home.css";
@@ -18,7 +17,7 @@ class Home extends Component {
            <div className="home-container">
                 <div className="top-container">
                     <img className="top" src={require("./home-image.png")} />
-                    <div className="top-text">  </div>
+                    <div className="top-text">  <Link to="/shop">  SHOP NOW </Link> </div>
                 </div>
                 <div className="mid-container">
                     <Link to="/shop"> 

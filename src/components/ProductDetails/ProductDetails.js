@@ -12,7 +12,8 @@ class ProductDetails extends  Component {
     super(props);
 
     this.state = {
-      product: []
+      product: [],
+      quantity: 0
     };
 
     this.addToCart = this.addToCart.bind(this);

@@ -10,7 +10,7 @@
 }
 
 .shop-link {
-    width: 33%;
+    width: 40%;
     text-decoration: none;
     color: black;
 }
@@ -36,7 +36,8 @@
         background: transparent;
         height: 20px;
         outline: none;
-        margin-left: 100px;
+        margin: 0 auto;
+        margin-bottom: 30px;
         
     }
 

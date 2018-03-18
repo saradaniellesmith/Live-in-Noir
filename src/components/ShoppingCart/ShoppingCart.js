@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
 import axios from "axios";
-import StripeCheckout from 'react-stripe-checkout';
 import swal from 'sweetalert';
 
 import Checkout from '../Checkout/Checkout'
 import './ShoppingCart.css'
+import './Grey_close_x.svg.png';
 
 class ShoppingCart extends Component {
   constructor(props) {
@@ -51,7 +49,7 @@ class ShoppingCart extends Component {
             <img className="cart-photo" src={product.image}/>
             <h1 className="cart-name"> {product.product_description} </h1>
             <h2 className="cart-price"> {product.price}.00 </h2>
-            <button className="remove" onClick={() => this.deleteFromCart(product.product_id)}> Remove </button>
+            <div className="remove" onClick={() => this.deleteFromCart(product.product_id)}> <img className="x" src={require('./Grey_close_x.svg.png')} /> </div>
           </div>
             <div className="checkout">
             
@@ -68,14 +66,18 @@ class ShoppingCart extends Component {
     }
     return (
       <div>
-        <div className="cart-list"> 
+        <h1 className="my-cart"> MY CART </h1>
+        <div className="cart-list">
           <div> {cartList} </div>
-          <p> TOTAL: ${total}.00 </p>
+          <div className="checkout">
+          <h1 className="order-sum"> ORDER SUMMARY </h1>
+          <p className="total"> TOTAL: ${total}.00 </p>
           <Checkout 
              name={'LIVE IN NOIR'}
              description={'Thank you!'}
              amount={total}
              />
+          </div>
         </div> 
       </div>
     );
