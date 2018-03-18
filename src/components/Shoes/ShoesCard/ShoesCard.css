@@ -1,21 +1,18 @@
-.shoe-container {
-    margin-top: 40px;
-    margin-bottom: 20px;
-    width:40%;
+.shoe-details-container {
+    margin: 0;
 }
 
 .shoe-image {
-    width: 90%;
-    height: auto;
-    padding: 15px;
-    margin: 15px;
-    -webkit-transition: .4s ease-in-out;
-    transition: .4s ease-in-out;
+    width: 70%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    margin: 5px;
 }
 
 .shoe-description {
     font-size: 15px;
     margin: .7em;
+    margin-top: 0;
 }
 
 .shoe-price {
@@ -26,12 +23,15 @@
     padding-top: 10px;
 }
 
-@media only screen and (max-width: 650px){
-    .shoe-image {
-        width: 90%;
-    }
 
-    .shoe-container {
+
+@media only screen and (max-width: 650px){
+ 
+    .shoe-details-container {
         margin-top: 15px;
     }
+
+    
+
+
 }

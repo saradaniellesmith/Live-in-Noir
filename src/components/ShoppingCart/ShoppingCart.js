@@ -51,9 +51,6 @@ class ShoppingCart extends Component {
             <h2 className="cart-price"> {product.price}.00 </h2>
             <div className="remove" onClick={() => this.deleteFromCart(product.product_id)}> <img className="x" src={require('./Grey_close_x.svg.png')} /> </div>
           </div>
-            <div className="checkout">
-            
-            </div>
           </div>
         );
       });
@@ -65,7 +62,7 @@ class ShoppingCart extends Component {
       console.log(total);
     }
     return (
-      <div>
+      <div className="shopping-cart-page">
         <h1 className="my-cart"> MY CART </h1>
         <div className="cart-list">
           <div> {cartList} </div>

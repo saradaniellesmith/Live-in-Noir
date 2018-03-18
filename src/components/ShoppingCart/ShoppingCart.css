@@ -11,8 +11,8 @@
     display: flex;
     justify-content: flex-start;
     margin-top: 30px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 50px;
+    margin-right: 50px;
     font-size: 14px;
     padding-bottom: 10px;
     border-bottom: .5px solid gray;
@@ -49,10 +49,6 @@
     margin: 10px;
 }
 
-.checkout-container {
-    margin-top: 40px;
-}
-
 .checkout {
     display: flex;
     justify-content: center;
@@ -65,4 +61,34 @@
 
 .total {
     font-size: 15px;
+}
+
+@media only screen and (max-width: 650px) {
+    .cart-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+
+    }
+
+    .cart-description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        margin-bottom: 20px;    
+    }
+
+    .x {
+        padding: 8px;
+    }
+
+    .checkout {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
 }

@@ -1,6 +1,6 @@
 .top {
     height: 100%;
-    width: 97%;
+    width: 94%;
 }
 
 .top-container {
@@ -21,15 +21,6 @@
     text-align: center;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-}
-
-a:hover {
-    color: black;
-}
-
 .top-text:hover {
     border: none;
     color: black;
@@ -44,7 +35,7 @@ a:hover {
 
 .mid-left {
     position: absolute;
-    top: 85%;
+    top: 88%;
     left: 25%;
 }
 
@@ -56,13 +47,18 @@ a:hover {
     padding-bottom: .25em;
 }
 
+.home-hover {
+    text-decoration: none;
+    color: white;
+}
+
 .mid-left:hover {
     border-bottom-color: white;
 }
 
 .mid-right {
     position: absolute;
-    top: 85%;
+    top: 88%;
     right: 25%;
 }
 

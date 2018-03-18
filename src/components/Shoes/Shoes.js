@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 
 import ShoesCard from './ShoesCard/ShoesCard';
 import './Shoes.css';
+import './hearts.png';
 
 class Shoes extends Component {
     constructor(props) {
@@ -42,11 +43,11 @@ class Shoes extends Component {
         console.log(this.state.shoesList);
         var shoes = this.state.shoesList.map((shoes, index) => {
             return (
-                <div className="shop-shoes">
+            <div className="shop-shoes">
                 <Link className="shoes-link" to={`/shoedetails/${shoes.shoe_id}`} key={index} >
                    <ShoesCard shoes={shoes} key={index} />
                 </Link>
-                <button onClick={ () => {this.handleShoeLike(shoes.shoe_id)}}> Like </button>
+                <span onClick={ () => {this.handleShoeLike(shoes.shoe_id)}} className="like-btn"> <img className="heart-btn" src={require('./hearts.png')} /> </span>
             </div>
             );
         });

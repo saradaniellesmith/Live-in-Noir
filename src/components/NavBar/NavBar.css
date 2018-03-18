@@ -2,6 +2,7 @@
     text-align: right;
     background: transparent;
     height: 9.5vh;
+    margin: 0 auto;
 }
 
 .nav:hover {
@@ -39,6 +40,8 @@
     justify-content: space-between;
     align-content: center;
     align-items: center;
+    width: 97%;
+    margin: 0 auto;
 }
 
 .routes {

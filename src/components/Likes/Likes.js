@@ -35,21 +35,18 @@ class Likes extends Component {
            return(
             <div className="favs-list">
                  <img className="fav-image" src={element.image} />
-                 <button onClick={ () => this.deleteLikes(element.shoe_id)} > delete </button>
+                 <button onClick={ () => this.deleteLikes(element.shoe_id)} className="unlike" > delete </button>
             </div>
            )
        })
 
         return(
-
+        <div className="my-likes-container"> 
+            <h1 className="my-likes"> MY FAVS </h1>
             <div className="favs">
-                <p> Favorites </p>
-                <input placeHolder="favs page" />
-                <button> Edit </button>
-              <div className="favs-container">
                 <div className="liked"> {liked} </div>
-              </div>
             </div>
+        </div>
         )
     }
 }

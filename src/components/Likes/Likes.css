@@ -1,14 +1,42 @@
 .fav-image {
-   width: 100%;
+   width: 90%;
    display: flex;
    margin: 10px;
-   
 }
 
-.favs-container {
-    width: 30%;
+.favs-list {
+    width: 23%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.unlike {
+    width: 50px;
+}
+
+.my-likes {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 14px;
+    padding-bottom: 10px;
+    border-bottom: .5px solid gray;
+}
+
+.favs {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-   
+}
+
+.liked {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

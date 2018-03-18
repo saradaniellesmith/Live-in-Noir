@@ -9,21 +9,38 @@
     display: flex;
 }
 
-.shop-link {
-    width: 40%;
+.sort {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.shoes-link {
     text-decoration: none;
     color: black;
 }
 
 .shoes-container {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
 }
 
-.sort {
-    display: flex;
-    justify-content: flex-end;
+.shop-shoes {
+    width: 30%;
+}
+
+.like-btn {
+    margin-top: 10px;
+}
+
+.heart-btn {
+    width: 2vh;
+    padding: 8px;
+}
+
+.heart-btn:hover {
+    width: 2.5vh;
 }
 
 @media only screen and (max-width: 650px) {
@@ -50,5 +67,9 @@
         display: flex;
         justify-content: center;
         flex-wrap: none;
+    }
+
+    .shop-shoes {
+        width: 100%;
     }
 }

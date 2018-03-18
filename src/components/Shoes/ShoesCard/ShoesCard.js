@@ -9,7 +9,7 @@ class ShoesCard extends Component {
 
     render() {
         return(
-            <div className="shoe-container">
+            <div className="shoe-details-container">
                 <img className="shoe-image" src={this.props.shoes.image} />
                     <div className="shoe-details">
                         <h1 className="shoe-description"> {this.props.shoes.product_description} </h1>
