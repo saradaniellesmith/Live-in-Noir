@@ -1,3 +1,18 @@
+.edit-save {
+    height: 26px;
+    width: 60px;
+    background: #f3f3f3;
+}
+
+.fav-input {
+    height: 20px;
+    text-align: center;
+}
+
+.favs-list-title {
+
+}
+
 .fav-image {
    width: 90%;
    display: flex;
@@ -46,19 +61,6 @@
     flex-wrap: wrap;
 }
 
-.edit-save {
-    width: 40px;
-    height: 19px;
-    border: 1px solid gray;
-    color: gray;
-
-}
-
-.fav-title {
-    border: 1px solid gray;
-    height: 15px;
-}
-
 .title-save {
     display: flex;
 }
@@ -73,10 +75,6 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
-    }
-
-    .fav-title {
-        text-align: center;
     }
 
 }

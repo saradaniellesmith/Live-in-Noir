@@ -11,12 +11,14 @@
     background: transparent;
     height: 9.5vh;
     margin: 0 auto;
+    display: flex;
+    flex-direction: row;
 }
 
 .nav:hover {
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
-
+/* 
 .menu .logo {
     color: black;
     letter-spacing: 5px;
@@ -26,21 +28,35 @@
     width: 400px;
     margin-top: 18px;
     margin-left: 20px;
-}
+} */
 
 .logo a {
     text-decoration: none;
     color: black;
+    
+}
+
+.logo {
+    display: flex;
+    width: 50%;
+    font-size: 28px;
+    align-content: center;
+    align-items: center;
+    letter-spacing: 5px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
 .menu {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    justify-content: flex-end;
     align-content: center;
     align-items: center;
-    width: 97%;
+    width: 50%;
     margin: 0 auto;
+    height: 70%;
 }
 
 .routes {
@@ -128,6 +144,18 @@ label {
         display: block;
         background: white;
         z-index: 50;
+    }
+
+    .logo {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .nav {
+        display: flex;
+        margin-left: 40px;
     }
 
     

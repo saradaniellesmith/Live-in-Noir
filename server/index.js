@@ -134,7 +134,7 @@ app.get("/favs", controller.getUserLikes);
 app.post("/prodlikes", controller.likeProducts);
 app.post("/shoelikes", controller.likeShoes);
 app.delete("/deletefavs/:shoe_id", controller.deleteLikes);
-app.put("/updatetitle/", controller.updateTitle);
+app.put("/updatetitle", controller.updateTitle);
 
 
 // Stripe Payment //

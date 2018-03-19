@@ -126,10 +126,10 @@ module.exports = {
 
   getUserLikes: (req, res, next) => {
     const db = req.app.get("db");
-    
     db
     .getUserLikes([req.user.id])
     .then(likes => {
+      console.log('LIKES: ', likes);
       res.status(200).json(likes)})
     .catch( () => res.status(500).json());
   },
@@ -162,7 +162,7 @@ module.exports = {
     )},
 
    updateTitle: (req, res, next) => {
-      console.log("update title")
+      console.log(req.body.title, "title")
       const db = req.app.get("db")
       db
       .updateTitle([req.body.title, req.user.id])

@@ -44,6 +44,8 @@
     .sort {
         display: flex;
         justify-content: center;
+        margin-right: 23%;
+        margin-top: 10px;
     }
 
     .shop-container {

@@ -1,1 +1,1 @@
-UPDATE favs SET title = $1 WHERE id = $2;
+UPDATE favs SET title = $1 WHERE user_id = $2

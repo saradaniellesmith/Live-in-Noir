@@ -33,8 +33,8 @@ class NavBar extends Component {
         <div className ="nav">  
             <label htmlFor="toggle"> &#9776; </label>
             <input type="checkbox" id="toggle"/>
+            <div className="logo">  <Link to="/" > LIVE IN NOIR </Link> </div>
             <div className ="menu">
-                <div className="logo">  <Link to="/" > LIVE IN NOIR </Link> </div>
                 <div className="routes">
                     <p> <Link to="/shop/:shop" > CLOTHING </Link> </p>
                     <p> <Link to="/shoes" > SHOES </Link> </p>

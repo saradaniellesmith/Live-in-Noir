@@ -40,6 +40,15 @@
     color: #4c4c4b;
 }
 
+.link a{
+    color: #a3a5a7;
+    text-decoration: none;
+}
+
+.link a:hover {
+    color: #4c4c4b;
+}
+
 .footer-quote {
     display: flex;
     align-items: center;

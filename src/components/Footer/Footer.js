@@ -16,7 +16,7 @@ class Footer extends Component {
             <ul className="column"> 
                <h2 className="link-header"> Account </h2>
                <li className="link"> Manage Account </li>
-               <li className="link"> <Link style={linkStyle} to="/returnpolicy"> Orders & Returns </Link> </li>
+               <li className="link"> <Link to="/returnpolicy"> Orders & Returns </Link> </li>
                {/* <li className="link"> Redeem a Gift </li> */}
             </ul>
         </div>
@@ -24,8 +24,8 @@ class Footer extends Component {
         <div className="section"> 
             <ul className="column"> 
                <h2 className="link-header"> Company </h2>
-               <li className="link"> <Link style={linkStyle} to="/about">  About  </Link> </li>
-               <li className="link"> <Link style={linkStyle} to="/contact">  Contact </Link> </li>
+               <li className="link"> <Link to="/about">  About  </Link> </li>
+               <li className="link"> <Link to="/contact">  Contact </Link> </li>
                {/* <li className="link"> Careers </li> */}
             </ul>
         </div>
