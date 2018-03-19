@@ -1,5 +1,5 @@
 .prod-container {
-    margin: 40px 15px 20px 15px;
+    margin: 40px 15px 10px 10px;
 }
 
 .prod-image {
@@ -7,8 +7,7 @@
     height: auto;
     padding: 15px;
     margin: 15px;
-    -webkit-transition: .4s ease-in-out;
-    transition: .4s ease-in-out;
+   
 }
 
 .description {
@@ -26,6 +25,7 @@
 
 
 @media only screen and (max-width: 650px) {
+
     .prod-image {
         width: 90%;
     }

@@ -65,7 +65,7 @@ class ShoppingCart extends Component {
       <div className="shopping-cart-page">
         <h1 className="my-cart"> MY CART </h1>
         <div className="cart-list">
-          <div> {cartList} </div>
+          <div className="cart"> {cartList} </div>
           <div className="checkout">
           <h1 className="order-sum"> ORDER SUMMARY </h1>
           <p className="total"> TOTAL: ${total}.00 </p>

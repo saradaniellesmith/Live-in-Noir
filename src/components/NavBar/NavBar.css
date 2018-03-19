@@ -1,3 +1,11 @@
+.cart-icon {
+    height: 3.2vh;
+}
+
+.heart-icon {
+    height: 3.2vh;
+}
+
 .nav {
     text-align: right;
     background: transparent;
@@ -8,15 +16,6 @@
 .nav:hover {
     box-shadow: 0 0 11px rgba(33,33,33,.2); 
 }
-
-/* 
-.live-in-noir {
-    width: 320px;
-    height: 37px;
-    display: flex;
-    align-content: center;
-    align-items: center;
-} */
 
 .menu .logo {
     color: black;
@@ -98,7 +97,7 @@ label {
     display: none;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 750px) {
     label {
         display: block;
         cursor: pointer;

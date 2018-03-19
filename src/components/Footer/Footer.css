@@ -45,6 +45,7 @@
     align-items: center;
     justify-content: center;
     justify-content: space-around;
+    margin-right: 10px;
 
 }
 
@@ -54,12 +55,33 @@
     font-size: 15px;
 }
 
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 780px) {
 
     .footer-nav {
         display: flex;
         flex-direction: column;
         justify-content: center; 
+        align-items: center;
+    }
+
+    .section {
+        margin: 0;
+        padding: 0;
+    }
+
+    .footer-quote {
+        margin-bottom: 15px;
+    }
+    
+}
+
+@media only screen and (max-width: 650px) {
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; 
     }
 
     .section {

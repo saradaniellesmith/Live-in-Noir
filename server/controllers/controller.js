@@ -160,4 +160,14 @@ module.exports = {
     .then(response => db.getUserLikes([req.user.id])
     .then(response => res.status(200).json(response), console.log(response))
     )},
+
+   updateTitle: (req, res, next) => {
+      console.log("update title")
+      const db = req.app.get("db")
+      db
+      .updateTitle([req.body.title, req.user.id])
+      .then(response => res.status(200).json(response))
+      .catch( () => res.status(500).json());
+    },
+
 };

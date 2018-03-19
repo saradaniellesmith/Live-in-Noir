@@ -12,7 +12,6 @@
 .shoe-description {
     font-size: 15px;
     margin: .7em;
-    margin-top: 0;
 }
 
 .shoe-price {
@@ -31,7 +30,9 @@
         margin-top: 15px;
     }
 
-    
+    .shoe-image {
+        width: 90%;
+    }
 
 
 }

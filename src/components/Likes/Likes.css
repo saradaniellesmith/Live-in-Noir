@@ -18,6 +18,11 @@
     width: 50px;
 }
 
+.x-unlike {
+    height: 2vh;
+    padding-top: 20px;
+}
+
 .my-likes {
     display: flex;
     justify-content: flex-start;
@@ -39,4 +44,39 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.edit-save {
+    width: 40px;
+    height: 19px;
+    border: 1px solid gray;
+    color: gray;
+
+}
+
+.fav-title {
+    border: 1px solid gray;
+    height: 15px;
+}
+
+.title-save {
+    display: flex;
+}
+
+@media only screen and (max-width: 650px) {
+    .favs-list {
+        width: 40%;
+    }
+
+    .title-save {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .fav-title {
+        text-align: center;
+    }
+
 }
