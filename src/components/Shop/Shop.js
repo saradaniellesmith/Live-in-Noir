@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 import Card from "./Card/Card";
 import './Shop.css';
+import './hearts.png';
 
 class Shop extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class Shop extends Component {
         <Link className="shop-link" to={`/productdetails/${product.product_id}`} key={index}>
           <Card product={product} key={index} />
         </Link>
-        {/* <button onClick={ () => {this.handleProdLike(product.product_id)}}> Like </button> */}
+        <span className="like-btn"> <img className="heart-btn" src={require('./hearts.png')} /> </span>
       </div>
       );
     });

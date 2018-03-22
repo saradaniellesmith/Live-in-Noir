@@ -27,11 +27,16 @@
 @media only screen and (max-width: 650px){
  
     .shoe-details-container {
-        margin-top: 15px;
+        margin-top: 0px;
     }
 
     .shoe-image {
         width: 90%;
+        margin-bottom: 0;
+    }
+
+    .shoe-details {
+        margin-top: 0;
     }
 
 

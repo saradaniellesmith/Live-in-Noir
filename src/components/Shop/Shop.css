@@ -19,7 +19,13 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-top: 0;
 }
+
+.heart-btn {
+    cursor: pointer;
+}
+
 
 .sort {
     display: flex;
@@ -38,7 +44,6 @@
         outline: none;
         margin: 0 auto;
         margin-bottom: 30px;
-        
     }
 
     .sort {

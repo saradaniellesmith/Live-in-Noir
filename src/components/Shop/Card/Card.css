@@ -27,10 +27,14 @@
 @media only screen and (max-width: 650px) {
 
     .prod-image {
-        width: 90%;
+        width: 70%;
+        margin: 0 auto;
+        padding: 0;
     }
 
     .prod-container {
-        margin-top: 15px;
+        margin-top: 20px;
     }
+
+
 }

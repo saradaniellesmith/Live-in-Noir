@@ -33,11 +33,8 @@
 .heart-btn {
     width: 2vh;
     padding: 8px;
+    cursor: pointer;
 }
-
-/* .heart-btn:hover {
-    width: 3vh;
-} */
 
 .sort {
     display: flex;
@@ -83,6 +80,6 @@
     }
 
     .shop-shoes {
-        width: 100%;
+        width: 80%;
     }
 }

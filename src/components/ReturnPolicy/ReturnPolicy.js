@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-
+import './ReturnPolicy.css';
 
 class ReturnPolicy extends Component {
   render() {

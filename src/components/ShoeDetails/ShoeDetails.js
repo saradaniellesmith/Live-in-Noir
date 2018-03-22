@@ -40,10 +40,9 @@ class ShoeDetails extends Component {
                         <img className="image-details" src={shoes.image3} />
                     </div>
                     <div className="shoe-info">
-                        <h1> {shoes.brand_name} </h1>
-                        <h2> {shoes.product_description} </h2>
-                        <h3> ${shoes.price}.00 </h3>
-                        <h3 className="editors-note-title"> DESCRIPTION </h3>
+                        <h1 className="details-brand"> {shoes.brand_name} </h1>
+                        <h2 className="details-descrip"> {shoes.product_description} </h2>
+                        <h3 className="details-price"> ${shoes.price}.00 </h3>
                         <p className="editors-note"> {shoes.editor_note} </p>
                         <button className="add" onClick={() => {this.addToCart(shoes)
                             swal({

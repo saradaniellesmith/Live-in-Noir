@@ -43,7 +43,7 @@
     align-content: center;
     align-items: center;
     letter-spacing: 5px;
-    margin-left: 20px;
+    margin-left: 43px;
     margin-top: 10px;
 }
 
@@ -57,6 +57,7 @@
     width: 50%;
     margin: 0 auto;
     height: 70%;
+    margin-right: 10px;
 }
 
 .routes {

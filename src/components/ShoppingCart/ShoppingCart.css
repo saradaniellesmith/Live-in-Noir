@@ -32,6 +32,7 @@
 .x {
     height: 2vh;
     width: auto;
+    cursor: pointer;
 }
 
 .cart-name {

@@ -47,9 +47,9 @@ class ProductDetails extends  Component {
           <img className="image-details" src={product.image3} />
         </div>
           <div className="product-info">
-            <h1> {product.brand_name} </h1>
-            <h2> {product.product_description} </h2>
-            <h3> {product.price}.00 </h3>
+            <h1 className="details-brand"> {product.brand_name} </h1>
+            <h2 className="details-descrip"> {product.product_description} </h2>
+            <h3 className="details-price"> ${product.price}.00 </h3>
             {/* <p> Description </p> */}
             <p className="editors-note"> {product.editor_note} </p>
             <button className="add" onClick={() => {this.addToCart(product)
