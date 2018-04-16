@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { withRouter } from "react-router-dom";
-import { connect } from "react-redux";
 import axios from "axios";
 import swal from 'sweetalert';
 
@@ -13,7 +12,6 @@ class ProductDetails extends  Component {
 
     this.state = {
       product: [],
-      quantity: 0
     };
 
     this.addToCart = this.addToCart.bind(this);
@@ -73,6 +71,4 @@ class ProductDetails extends  Component {
   }
 }
 
-const mapStateToProps = state => state;
-
-export default withRouter(connect(mapStateToProps)(ProductDetails));
+export default ProductDetails;

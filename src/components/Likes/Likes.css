@@ -53,6 +53,13 @@
     cursor: pointer;
 }
 
+.my-likes-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .my-likes {
     display: flex;
     justify-content: flex-start;

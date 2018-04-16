@@ -31,7 +31,7 @@ class Shop extends Component {
       this.setState({ productList: response.data });
     }).catch(console.log);
   }
-
+// 
   handleProdLike(id) {
     console.log(id);
     axios.post("/prodlikes", {id: id})

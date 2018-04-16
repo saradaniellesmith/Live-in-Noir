@@ -61,9 +61,11 @@ class Likes extends Component {
 
         return(
         <div className="my-likes-container"> 
-                <h1 className="favs-list-title"> {this.state.updateFavsTitle} </h1>
+
+                <div className="about-title"> My Favorites </div>
+                {/* <h1 className="favs-list-title"> {this.state.updateFavsTitle} </h1>
                 <input className="fav-input" type="text" placeHolder="name your favs list" onChange={ (e) => this.handleChange(e)} />
-                <button className="edit-save" onClick={() => this.handleEdit()}> update </button>
+                <button className="edit-save" onClick={() => this.handleEdit()}> update </button> */}
             <div className="favs">
                 <div className="liked"> {liked} </div>
             </div>
