@@ -68,10 +68,10 @@ class NavBar extends Component {
         <IconMenu iconButtonElement={<IconButton> <img className="hamburger" src={require('./hamicon.png')} /> </IconButton>}>
             <MenuItem primaryText = { <Link  to="/shop/:shop" > CLOTHING </Link> } />
             <MenuItem primaryText = { <Link  to="/shoes" > SHOES </Link> } />
-            <MenuItem primaryText = { <Link  to="/shoppingcart" > CART </Link> } />
             <MenuItem primaryText = {!this.state.user ? <a href={process.env.REACT_APP_LOGIN} > LOGIN </a> 
                     : <a href="http://localhost:3001/logout" className="logout"> LOGOUT </a> } />
-            <MenuItem primaryText = { <Link  to="/likes" > LIKES </Link> } />
+            <MenuItem primaryText = { <Link  to="/shoppingcart" > <img className="cart-icon" src={require('./bag.png')}/> </Link> } />
+            <MenuItem primaryText = { <Link  to="/likes" > <img className="heart-icon" src={require('./hearts.png')}/> </Link> } />
         </IconMenu>
 
         </MuiThemeProvider>
